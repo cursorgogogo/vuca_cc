@@ -20,12 +20,44 @@
                     <a href="index.html" class="text-gray-900 hover:text-emerald-600 font-medium">Home</a>
                     <a href="framework.html" class="text-gray-700 hover:text-emerald-600">Framework</a>
                     <a href="leadership.html" class="text-gray-700 hover:text-emerald-600">Leadership</a>
+                    <a href="action-guide.html" class="text-gray-700 hover:text-emerald-600">Action Guide</a>
                     <a href="examples.html" class="text-gray-700 hover:text-emerald-600">Examples</a>
                     <a href="resources.html" class="text-gray-700 hover:text-emerald-600">Resources</a>
                 </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-emerald-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-gray-900 font-medium bg-emerald-50">Home</a>
+                <a href="framework.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Framework</a>
+                <a href="leadership.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Leadership</a>
+                <a href="action-guide.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Action Guide</a>
+                <a href="examples.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Examples</a>
+                <a href="resources.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Resources</a>
             </div>
         </div>
     </nav>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
 
     <!-- Hero Section -->
     <section class="py-20 bg-gradient-to-br from-emerald-50 to-white">
@@ -35,7 +67,7 @@
                 <p class="text-xl text-gray-700 mb-4 max-w-3xl mx-auto">Volatility, Uncertainty, Complexity, and Ambiguity define modern business and leadership challenges. Master the frameworks and strategies to thrive in dynamic environments.</p>
                 <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="#what-is-vuca" class="px-8 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700">Get Started</a>
-                    <a href="framework.html" class="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:border-emerald-600 hover:text-emerald-600">Explore Framework</a>
+                    <a href="action-guide.html" class="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:border-emerald-600 hover:text-emerald-600">Action Guide</a>
                 </div>
             </div>
         </div>
@@ -294,7 +326,7 @@
     </section>
 
     <!-- Practical Applications -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-gray-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-gray-900 mb-12">VUCA in Practice: Industries and Applications</h2>
             
@@ -347,6 +379,218 @@
         </div>
     </section>
 
+    <!-- Cross-Industry Success Stories -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Cross-Industry VUCA Strategies</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">Proven tactics from diverse industries that can transform your approach. What works in finance might revolutionize manufacturing. What healthcare learned can empower retail.</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Financial Services Case -->
+                <div class="bg-gradient-to-r from-emerald-50 to-white border border-emerald-200 rounded-3xl p-8">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Financial Services</h3>
+                            <p class="text-sm text-emerald-700 font-medium mb-4">Strategy: Regulatory Collaboration as Competitive Advantage</p>
+                            <p class="text-gray-700 text-sm leading-relaxed">Faced with constant regulatory changes, leading banks transformed compliance from cost center to innovation driver. They established proactive regulatory partnerships and built adaptable compliance frameworks.</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-3">What They Did</p>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>Created cross-functional compliance teams with business units</li>
+                                <li>Built modular systems that adapt to new regulations</li>
+                                <li>Engaged regulators early in product development</li>
+                                <li>Turned compliance data into business intelligence</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-emerald-100 rounded-xl p-6">
+                            <p class="font-bold text-gray-900 mb-3">Apply to Your Industry</p>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li><span class="font-medium">Healthcare:</span> Partner with FDA early on device development</li>
+                                <li><span class="font-medium">Manufacturing:</span> Collaborate with EPA on sustainability initiatives</li>
+                                <li><span class="font-medium">Tech:</span> Work with privacy regulators on data protection</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology Sector Case -->
+                <div class="bg-gradient-to-r from-blue-50 to-white border border-blue-200 rounded-3xl p-8">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Technology Sector</h3>
+                            <p class="text-sm text-blue-700 font-medium mb-4">Strategy: Continuous Deployment Culture</p>
+                            <p class="text-gray-700 text-sm leading-relaxed">Tech companies developed rapid iteration cycles that allow them to respond to market changes within hours, not months. Their "ship fast, learn faster" approach minimizes risk through small, reversible changes.</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-3">What They Did</p>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>Automated testing and deployment pipelines</li>
+                                <li>Implemented feature flags for gradual rollouts</li>
+                                <li>Established blameless post-mortem culture</li>
+                                <li>Created real-time monitoring dashboards</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-100 rounded-xl p-6">
+                            <p class="font-bold text-gray-900 mb-3">Apply to Your Industry</p>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li><span class="font-medium">Retail:</span> Test pricing changes in small store clusters</li>
+                                <li><span class="font-medium">Education:</span> Pilot curriculum changes with single cohorts</li>
+                                <li><span class="font-medium">Hospitality:</span> A/B test service protocols at select properties</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Retail Industry Case -->
+                <div class="bg-gradient-to-r from-purple-50 to-white border border-purple-200 rounded-3xl p-8">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Retail Industry</h3>
+                            <p class="text-sm text-purple-700 font-medium mb-4">Strategy: Demand-Driven Supply Networks</p>
+                            <p class="text-gray-700 text-sm leading-relaxed">After supply chain disruptions, retailers shifted from push-based forecasting to pull-based sensing. They use real-time sales data to trigger dynamic replenishment and supplier collaboration.</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-3">What They Did</p>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>Connected POS systems directly to suppliers</li>
+                                <li>Shared inventory visibility across the network</li>
+                                <li>Created flexible fulfillment options</li>
+                                <li>Built regional micro-distribution centers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-100 rounded-xl p-6">
+                            <p class="font-bold text-gray-900 mb-3">Apply to Your Industry</p>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li><span class="font-medium">Manufacturing:</span> Link production to actual customer orders</li>
+                                <li><span class="font-medium">Food Service:</span> Adjust menus based on ingredient availability</li>
+                                <li><span class="font-medium">Publishing:</span> Print-on-demand based on sales velocity</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare Case -->
+                <div class="bg-gradient-to-r from-red-50 to-white border border-red-200 rounded-3xl p-8">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Healthcare Systems</h3>
+                            <p class="text-sm text-red-700 font-medium mb-4">Strategy: Surge Capacity Architecture</p>
+                            <p class="text-gray-700 text-sm leading-relaxed">Pandemic response taught hospitals to design for elastic capacity. They developed modular units, cross-trained staff, and created rapid redeployment protocols that activate within hours.</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-3">What They Did</p>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>Trained nurses in multiple specialties</li>
+                                <li>Created convertible physical spaces</li>
+                                <li>Established equipment sharing networks</li>
+                                <li>Built telehealth overflow capacity</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-red-100 rounded-xl p-6">
+                            <p class="font-bold text-gray-900 mb-3">Apply to Your Industry</p>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li><span class="font-medium">Customer Service:</span> Cross-train reps across product lines</li>
+                                <li><span class="font-medium">Logistics:</span> Design warehouses for multi-use scenarios</li>
+                                <li><span class="font-medium">Hospitality:</span> Create flex spaces for events or rooms</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manufacturing Case -->
+                <div class="bg-gradient-to-r from-amber-50 to-white border border-amber-200 rounded-3xl p-8">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Advanced Manufacturing</h3>
+                            <p class="text-sm text-amber-700 font-medium mb-4">Strategy: Platform-Based Product Families</p>
+                            <p class="text-gray-700 text-sm leading-relaxed">Manufacturers adopted automotive industry's platform approach, creating common base architectures that support multiple product variants. This reduces complexity while increasing customization.</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-3">What They Did</p>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>Standardized 70% of components across products</li>
+                                <li>Created modular design libraries</li>
+                                <li>Delayed differentiation until final assembly</li>
+                                <li>Reduced SKU complexity by 40%</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-amber-100 rounded-xl p-6">
+                            <p class="font-bold text-gray-900 mb-3">Apply to Your Industry</p>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li><span class="font-medium">Software:</span> Build core platform with pluggable modules</li>
+                                <li><span class="font-medium">Food Production:</span> Create base recipes with variable ingredients</li>
+                                <li><span class="font-medium">Consulting:</span> Develop standard frameworks with custom layers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Case -->
+                <div class="bg-gradient-to-r from-indigo-50 to-white border border-indigo-200 rounded-3xl p-8">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Educational Institutions</h3>
+                            <p class="text-sm text-indigo-700 font-medium mb-4">Strategy: Competency-Based Learning Models</p>
+                            <p class="text-gray-700 text-sm leading-relaxed">Universities shifted from time-based to outcome-based education, allowing students to progress at their own pace. This model proved adaptable to both in-person and remote delivery.</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-3">What They Did</p>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>Defined clear skill milestones per course</li>
+                                <li>Created multiple paths to demonstrate mastery</li>
+                                <li>Implemented continuous assessment systems</li>
+                                <li>Unbundled content from delivery method</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-indigo-100 rounded-xl p-6">
+                            <p class="font-bold text-gray-900 mb-3">Apply to Your Industry</p>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li><span class="font-medium">Corporate Training:</span> Focus on skill demonstration vs. hours</li>
+                                <li><span class="font-medium">Professional Services:</span> Define deliverables by outcomes</li>
+                                <li><span class="font-medium">Project Management:</span> Measure progress by capabilities gained</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-gradient-to-r from-gray-50 to-white border border-gray-300 rounded-3xl p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">The Cross-Pollination Principle</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 mb-4 leading-relaxed">The most innovative VUCA responses come from borrowing strategies across industries. Financial services' risk management informs tech security. Healthcare's triage protocols improve customer service prioritization. Manufacturing's lean principles transform software development.</p>
+                        <p class="text-gray-700 leading-relaxed">When evaluating these strategies, ask: What is the underlying principle? How does it address uncertainty? Can we adapt this to our context?</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <p class="font-bold text-gray-900 mb-3">How to Adapt Cross-Industry Strategies</p>
+                        <ol class="text-sm text-gray-700 space-y-2 list-decimal list-inside">
+                            <li>Identify the core problem they solved</li>
+                            <li>Extract the underlying principle</li>
+                            <li>Map to your industry's constraints</li>
+                            <li>Run a small pilot before full rollout</li>
+                            <li>Measure impact against baseline metrics</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-20 bg-emerald-600 text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -376,11 +620,11 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-medium mb-4">Leadership</h4>
+                    <h4 class="text-white font-medium mb-4">Practice</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="leadership.html" class="hover:text-white">VUCA Leadership</a></li>
-                        <li><a href="leadership.html#skills" class="hover:text-white">Key Skills</a></li>
-                        <li><a href="leadership.html#training" class="hover:text-white">Training Programs</a></li>
+                        <li><a href="action-guide.html" class="hover:text-white">Action Guide</a></li>
+                        <li><a href="leadership.html" class="hover:text-white">Leadership Strategies</a></li>
+                        <li><a href="examples.html" class="hover:text-white">Industry Examples</a></li>
                     </ul>
                 </div>
                 <div>
@@ -400,4 +644,3 @@
 
 </body>
 </html>
-

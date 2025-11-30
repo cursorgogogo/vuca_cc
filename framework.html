@@ -20,12 +20,44 @@
                     <a href="index.html" class="text-gray-700 hover:text-emerald-600">Home</a>
                     <a href="framework.html" class="text-gray-900 hover:text-emerald-600 font-medium">Framework</a>
                     <a href="leadership.html" class="text-gray-700 hover:text-emerald-600">Leadership</a>
+                    <a href="action-guide.html" class="text-gray-700 hover:text-emerald-600">Action Guide</a>
                     <a href="examples.html" class="text-gray-700 hover:text-emerald-600">Examples</a>
                     <a href="resources.html" class="text-gray-700 hover:text-emerald-600">Resources</a>
                 </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-emerald-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Home</a>
+                <a href="framework.html" class="block px-3 py-2 rounded-md text-gray-900 font-medium bg-emerald-50">Framework</a>
+                <a href="leadership.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Leadership</a>
+                <a href="action-guide.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Action Guide</a>
+                <a href="examples.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Examples</a>
+                <a href="resources.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Resources</a>
             </div>
         </div>
     </nav>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
 
     <!-- Hero -->
     <section class="py-20 bg-gradient-to-br from-emerald-50 to-white">
@@ -481,4 +513,3 @@
 
 </body>
 </html>
-
