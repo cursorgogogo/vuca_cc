@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUCAアクションガイド：変動時代の実践的プレイブック</title>
+    <meta name="description" content="VUCA環境をナビゲートするための実践可能な戦略とチェックリスト。キャリアナビゲーション、将来スキル、サプライチェーン回復力、チームアジリティに関する実践ガイドを入手。">
+    <link rel="icon" type="image/svg+xml" href="../V.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900">
+    
+    <!-- Navigation -->
+    <nav class="border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-emerald-600">VUCA</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-emerald-600">ホーム</a>
+                    <a href="framework.html" class="text-gray-700 hover:text-emerald-600">フレームワーク</a>
+                    <a href="leadership.html" class="text-gray-700 hover:text-emerald-600">リーダーシップ</a>
+                    <a href="action-guide.html" class="text-gray-900 hover:text-emerald-600 font-medium">アクションガイド</a>
+                    <a href="examples.html" class="text-gray-700 hover:text-emerald-600">事例</a>
+                    <a href="resources.html" class="text-gray-700 hover:text-emerald-600">リソース</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-emerald-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">ホーム</a>
+                <a href="framework.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">フレームワーク</a>
+                <a href="leadership.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">リーダーシップ</a>
+                <a href="action-guide.html" class="block px-3 py-2 rounded-md text-gray-900 font-medium bg-emerald-50">アクションガイド</a>
+                <a href="examples.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">事例</a>
+                <a href="resources.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">リソース</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-emerald-50 to-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">実践的VUCAプレイブック</h1>
+                <p class="text-xl text-gray-700 mb-4 max-w-3xl mx-auto">あなたの仕事でVUCA原則を実装するための実践ガイドとチェックリスト。理論ではなく、あなたが従うことができる実証済みのステップ。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Playbooks Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Career Navigation Guide -->
+                <div class="bg-gradient-to-br from-emerald-50 to-white border border-emerald-200 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">キャリアナビゲーションの3ステップ</h3>
+                    <p class="text-gray-700 mb-6">変動する雇用市場のための回復力のあるキャリアコンパスを構築する</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-2">1. スキルポートフォリオをマッピング</p>
+                            <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                                <li>現在所有している5つの核心的技術スキルをリストアップ</li>
+                                <li>手の届く範囲内の3つの隣接スキルを特定</li>
+                                <li>あなたの業界の2つの新興スキルを調査</li>
+                                <li>各カテゴリの四半期学習目標を作成</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-2">2. 複数の収入源を構築</p>
+                            <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                                <li>核心スキルに基づいて1つのコンサルティングサービスを開発</li>
+                                <li>あなたの専門知識を紹介するコンテンツを作成</li>
+                                <li>紹介機会のためのピアネットワークを確立</li>
+                                <li>能力を示すサイドプロジェクトを維持</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-2">3. 機会レーダーを作成</p>
+                            <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                                <li>LinkedInで10人の主要業界リーダーをフォロー</li>
+                                <li>2つの専門コミュニティまたはフォーラムに参加</li>
+                                <li>理想的な役割のための求人アラートを設定</li>
+                                <li>月次の情報面接をスケジュール</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Work Skills -->
+                <div class="bg-gradient-to-br from-blue-50 to-white border border-blue-200 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">10の必須未来仕事スキル</h3>
+                    <p class="text-gray-700 mb-6">不確実性の中で繁栄するための核心的能力</p>
+                    
+                    <div class="bg-white rounded-xl p-4 border border-gray-200">
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3">
+                                <span class="bg-blue-100 text-blue-700 text-xs font-bold rounded px-2 py-1">1</span>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900">適応的学習</p>
+                                    <p class="text-xs text-gray-600">30日以内に新しいツールをマスター</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <span class="bg-blue-100 text-blue-700 text-xs font-bold rounded px-2 py-1">2</span>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900">デジタル流暢性</p>
+                                    <p class="text-xs text-gray-600">AIと自動化ツールをナビゲート</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <span class="bg-blue-100 text-blue-700 text-xs font-bold rounded px-2 py-1">3</span>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900">クロスファンクショナルコラボレーション</p>
+                                    <p class="text-xs text-gray-600">部門間で効果的に働く</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <span class="bg-blue-100 text-blue-700 text-xs font-bold rounded px-2 py-1">4</span>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900">データ解釈</p>
+                                    <p class="text-xs text-gray-600">メトリクスから決定を下す</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <span class="bg-blue-100 text-blue-700 text-xs font-bold rounded px-2 py-1">5</span>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900">リモートコミュニケーション</p>
+                                    <p class="text-xs text-gray-600">バーチャルチームを効果的にリード</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <span class="bg-blue-100 text-blue-700 text-xs font-bold rounded px-2 py-1">6</span>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900">創造的問題解決</p>
+                                    <p class="text-xs text-gray-600">制約下で解決策を生み出す</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <span class="bg-blue-100 text-blue-700 text-xs font-bold rounded px-2 py-1">7</span>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900">感情的知性</p>
+                                    <p class="text-xs text-gray-600">職場の動態をナビゲート</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <span class="bg-blue-100 text-blue-700 text-xs font-bold rounded px-2 py-1">8</span>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900">システム思考</p>
+                                    <p class="text-xs text-gray-600">相互接続された影響を理解</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <span class="bg-blue-100 text-blue-700 text-xs font-bold rounded px-2 py-1">9</span>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900">迅速なプロトタイピング</p>
+                                    <p class="text-xs text-gray-600">アイデアを迅速にテストし、反復</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <span class="bg-blue-100 text-blue-700 text-xs font-bold rounded px-2 py-1">10</span>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900">回復力管理</p>
+                                    <p class="text-xs text-gray-600">プレッシャーの下でパフォーマンスを維持</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Supply Chain Priorities -->
+                <div class="bg-gradient-to-br from-purple-50 to-white border border-purple-200 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">5つのサプライチェーン優先事項</h3>
+                    <p class="text-gray-700 mb-6">小売と流通回復力のための必須戦略</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-2">1. サプライヤーベースを多様化</p>
+                            <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                                <li>重要なコンポーネントごとに2-3のバックアップサプライヤーを特定</li>
+                                <li>異なる地域にわたる関係を確立</li>
+                                <li>数量範囲のある柔軟な契約を交渉</li>
+                                <li>四半期ごとのサプライヤーヘルス監査を実行</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-2">2. リアルタイム可視性を実装</p>
+                            <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                                <li>チェーン全体にトラッキングシステムを展開</li>
+                                <li>遅延のための自動アラートシステムを作成</li>
+                                <li>主要ステークホルダーとデータダッシュボードを共有</li>
+                                <li>パターンのために週次で分析をレビュー</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-2">3. 戦略的在庫を構築</p>
+                            <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                                <li>重要なアイテムの安全在庫を維持</li>
+                                <li>需要予測ツールを使用</li>
+                                <li>地域配送ハブを作成</li>
+                                <li>コストと可用性のトレードオフのバランス</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-2">4. シナリオ計画を開発</p>
+                            <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                                <li>最も可能性の高い5つの混乱シナリオをマッピング</li>
+                                <li>それぞれのための対応プレイブックを作成</li>
+                                <li>四半期ごとのシミュレーション演習を実行</li>
+                                <li>学習に基づいて計画を更新</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-4 border border-gray-200">
+                            <p class="font-bold text-gray-900 mb-2">5. クロスファンクショナルチームを育成</p>
+                            <ul class="text-sm text-gray-700 space-y-1 ml-4">
+                                <li>調達、物流、販売を接続</li>
+                                <li>週次調整会議を開催</li>
+                                <li>部門間でKPIを共有</li>
+                                <li>協調的な問題解決を報酬</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Agility Checklist -->
+                <div class="bg-gradient-to-br from-amber-50 to-white border border-amber-200 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">7ポイントチームアジリティチェックリスト</h3>
+                    <p class="text-gray-700 mb-6">あなたのチームを適応ユニットに変革する</p>
+                    
+                    <div class="bg-white rounded-xl p-4 border border-gray-200">
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="bg-amber-100 text-amber-700 text-xs font-bold rounded px-2 py-1 mt-1">1</div>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900 mb-1">迅速な意思決定プロトコルを確立</p>
+                                    <p class="text-xs text-gray-600">承認なしで誰がどの決定を下せるかを定義</p>
+                                    <p class="text-xs text-gray-600 mt-1">行動：役割と緊急度レベルごとに意思決定マトリックスを文書化</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <div class="bg-amber-100 text-amber-700 text-xs font-bold rounded px-2 py-1 mt-1">2</div>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900 mb-1">フィードバックループを作成</p>
+                                    <p class="text-xs text-gray-600">毎日のスタンドアップと週次のレトロスペクティブを実装</p>
+                                    <p class="text-xs text-gray-600 mt-1">行動：15分の毎日の同期と60分の金曜レビューをスケジュール</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <div class="bg-amber-100 text-amber-700 text-xs font-bold rounded px-2 py-1 mt-1">3</div>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900 mb-1">クロストレーニングを可能にする</p>
+                                    <p class="text-xs text-gray-600">すべてのチームメンバーが隣接する役割を学習</p>
+                                    <p class="text-xs text-gray-600 mt-1">行動：スキル移転のためにジュニアとシニアスタッフを月次でペアリング</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <div class="bg-amber-100 text-amber-700 text-xs font-bold rounded px-2 py-1 mt-1">4</div>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900 mb-1">進行中の作業を削減</p>
+                                    <p class="text-xs text-gray-600">完成率を向上させるために同時プロジェクトを制限</p>
+                                    <p class="text-xs text-gray-600 mt-1">行動：いつでも1人あたり最大3つのアクティブプロジェクトを設定</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <div class="bg-amber-100 text-amber-700 text-xs font-bold rounded px-2 py-1 mt-1">5</div>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900 mb-1">実験能力を構築</p>
+                                    <p class="text-xs text-gray-600">新しいアプローチをテストするために20%の時間を割り当て</p>
+                                    <p class="text-xs text-gray-600 mt-1">行動：イノベーション作業のために金曜日の午後を予約</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <div class="bg-amber-100 text-amber-700 text-xs font-bold rounded px-2 py-1 mt-1">6</div>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900 mb-1">知識リポジトリを維持</p>
+                                    <p class="text-xs text-gray-600">共有スペースでプロセスと決定を文書化</p>
+                                    <p class="text-xs text-gray-600 mt-1">行動：標準作業手順を含むチームwikiを作成</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <div class="bg-amber-100 text-amber-700 text-xs font-bold rounded px-2 py-1 mt-1">7</div>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-900 mb-1">失敗した実験を祝う</p>
+                                    <p class="text-xs text-gray-600">失敗した試みから学習することを報酬</p>
+                                    <p class="text-xs text-gray-600 mt-1">行動：月次の全員会議で失敗のストーリーを共有</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-emerald-50 to-blue-50 border border-emerald-200 rounded-3xl p-8 text-center">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">1つのプレイブックから始める</h3>
+                <p class="text-gray-700 mb-4">現在の課題に最も関連するガイドを選択してください。次のものに移る前に完全に実装してください。一貫した実行は完璧な計画に勝ります。</p>
+                <a href="leadership.html" class="inline-block px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700">リーダーシップ戦略を探索</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-emerald-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">実装する準備はできていますか？</h2>
+            <p class="text-xl text-emerald-50 mb-8">これらのアクションガイドを補完するために、より多くのVUCAリソース、フレームワーク、リーダーシップ戦略を探索してください。</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="framework.html" class="px-8 py-3 bg-white text-emerald-600 rounded-lg font-medium hover:bg-emerald-50">フレームワークを探索</a>
+                <a href="leadership.html" class="px-8 py-3 border border-white text-white rounded-lg font-medium hover:bg-emerald-700">リーダーシップガイド</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">VUCA</h3>
+                    <p class="text-sm text-gray-400">VUCAワールドを理解し、ナビゲートするための包括的なリソース。</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">学習</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white">VUCAとは</a></li>
+                        <li><a href="framework.html" class="hover:text-white">VUCAフレームワーク</a></li>
+                        <li><a href="examples.html" class="hover:text-white">実例</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">実践</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="action-guide.html" class="hover:text-white">アクションガイド</a></li>
+                        <li><a href="leadership.html" class="hover:text-white">リーダーシップ戦略</a></li>
+                        <li><a href="examples.html" class="hover:text-white">業界事例</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">リソース</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="resources.html" class="hover:text-white">書籍・記事</a></li>
+                        <li><a href="resources.html#tools" class="hover:text-white">ツール・テンプレート</a></li>
+                        <li><a href="resources.html#case-studies" class="hover:text-white">ケーススタディ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-sm text-center text-gray-400">
+                <p>2025 VUCA. VUCA教育とリーダーシップ開発のための専門リソース。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

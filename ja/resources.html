@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUCAリソース：書籍、ツール、テンプレート、トレーニング資料</title>
+    <meta name="description" content="リーダーと組織のための必須書籍、実践的なツール、テンプレート、ケーススタディ、トレーニング資料を含む包括的なVUCAリソース。">
+    <link rel="icon" type="image/svg+xml" href="../V.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900">
+    
+    <!-- Navigation -->
+    <nav class="border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-emerald-600">VUCA</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-emerald-600">ホーム</a>
+                    <a href="framework.html" class="text-gray-700 hover:text-emerald-600">フレームワーク</a>
+                    <a href="leadership.html" class="text-gray-700 hover:text-emerald-600">リーダーシップ</a>
+                    <a href="action-guide.html" class="text-gray-700 hover:text-emerald-600">アクションガイド</a>
+                    <a href="examples.html" class="text-gray-700 hover:text-emerald-600">事例</a>
+                    <a href="resources.html" class="text-gray-900 hover:text-emerald-600 font-medium">リソース</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-emerald-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">ホーム</a>
+                <a href="framework.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">フレームワーク</a>
+                <a href="leadership.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">リーダーシップ</a>
+                <a href="action-guide.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">アクションガイド</a>
+                <a href="examples.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">事例</a>
+                <a href="resources.html" class="block px-3 py-2 rounded-md text-gray-900 font-medium bg-emerald-50">リソース</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-emerald-50 to-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl font-bold text-gray-900 mb-6">VUCAリソース</h1>
+            <p class="text-xl text-gray-700 max-w-3xl">VUCA環境を効果的にナビゲートするための書籍、ツール、テンプレート、実践的なリソースのキュレーションされたコレクション。</p>
+        </div>
+    </section>
+
+    <!-- Essential Books -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">VUCAに関する必須書籍</h2>
+            
+            <div class="space-y-6">
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-32 flex-shrink-0">
+                            <div class="bg-emerald-100 rounded-xl h-44 flex items-center justify-center">
+                                <div class="text-center">
+                                    <p class="text-4xl font-bold text-emerald-700">書</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Leaders Make the Future</h3>
+                            <p class="text-emerald-600 font-medium mb-3">ボブ・ヨハンセン、2012年</p>
+                            <p class="text-gray-700 mb-4">未来学者ボブ・ヨハンセンによるVUCA Primeの決定的な作品。VUCA課題への対応として、ビジョン-理解-明確性-アジリティフレームワークを導入します。VUCAの脅威を機会に変える方法を理解するための必須読書です。</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">リーダーシップ</span>
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">VUCA Prime</span>
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">戦略</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-32 flex-shrink-0">
+                            <div class="bg-blue-100 rounded-xl h-44 flex items-center justify-center">
+                                <div class="text-center">
+                                    <p class="text-4xl font-bold text-blue-700">書</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">The Practice of Adaptive Leadership</h3>
+                            <p class="text-blue-600 font-medium mb-3">ロナルド・ハイフェッツ、アレクサンダー・グラショー、マーティ・リンスキー、2009年</p>
+                            <p class="text-gray-700 mb-4">適応的リーダーシップ理論と実践の包括的なガイド。技術的問題と適応的課題を区別し、解決策が学習と変化を必要とする曖昧な状況をリードするためのフレームワークを提供します。</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-200">適応的リーダーシップ</span>
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-200">チェンジマネジメント</span>
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-200">実践的ツール</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-32 flex-shrink-0">
+                            <div class="bg-purple-100 rounded-xl h-44 flex items-center justify-center">
+                                <div class="text-center">
+                                    <p class="text-4xl font-bold text-purple-700">書</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Thinking in Systems</h3>
+                            <p class="text-purple-600 font-medium mb-3">ドネラ・H・メドウズ、2008年</p>
+                            <p class="text-gray-700 mb-4">システム思考の必須入門書で、VUCA環境での複雑性を理解するために重要です。フィードバックループ、システムの行動、複雑なシステムでの介入のためのレバレッジポイントを特定する方法を説明します。</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-50 text-purple-700 text-xs rounded-full border border-purple-200">システム思考</span>
+                                <span class="px-3 py-1 bg-purple-50 text-purple-700 text-xs rounded-full border border-purple-200">複雑性</span>
+                                <span class="px-3 py-1 bg-purple-50 text-purple-700 text-xs rounded-full border border-purple-200">メンタルモデル</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-32 flex-shrink-0">
+                            <div class="bg-amber-100 rounded-xl h-44 flex items-center justify-center">
+                                <div class="text-center">
+                                    <p class="text-4xl font-bold text-amber-700">書</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Antifragile</h3>
+                            <p class="text-amber-600 font-medium mb-3">ナシーム・ニコラス・タレブ、2012年</p>
+                            <p class="text-gray-700 mb-4">混乱と変動性から利益を得るシステムを構築する方法を探求します。反脆弱性の概念を導入します - 回復力を超えて、戦略的なオプショナリティを通じてVUCA条件から実際に利益を得る。</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-amber-50 text-amber-700 text-xs rounded-full border border-amber-200">回復力</span>
+                                <span class="px-3 py-1 bg-amber-50 text-amber-700 text-xs rounded-full border border-amber-200">リスク管理</span>
+                                <span class="px-3 py-1 bg-amber-50 text-amber-700 text-xs rounded-full border border-amber-200">変動性</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-32 flex-shrink-0">
+                            <div class="bg-emerald-100 rounded-xl h-44 flex items-center justify-center">
+                                <div class="text-center">
+                                    <p class="text-4xl font-bold text-emerald-700">書</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Team of Teams</h3>
+                            <p class="text-emerald-600 font-medium mb-3">スタンリー・マックリスター将軍、2015年</p>
+                            <p class="text-gray-700 mb-4">VUCA環境のために組織構造を適応させることに関する軍事の教訓。硬直した階層がどのように失敗し、共有意識と権限を与えられた実行を持つネットワーク化されたチームが複雑で急速に動く状況で成功するかを示します。</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">組織設計</span>
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">軍事戦略</span>
+                                <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200">アジリティ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-32 flex-shrink-0">
+                            <div class="bg-blue-100 rounded-xl h-44 flex items-center justify-center">
+                                <div class="text-center">
+                                    <p class="text-4xl font-bold text-blue-700">書</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">The Lean Startup</h3>
+                            <p class="text-blue-600 font-medium mb-3">エリック・リース、2011年</p>
+                            <p class="text-gray-700 mb-4">迅速な実験、検証済み学習、反復的製品開発を通じて曖昧性に対処する方法論。Build-Measure-Learnサイクルは、不確実性をナビゲートするための実践的なアプローチを提供します。</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-200">イノベーション</span>
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-200">実験</span>
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-200">曖昧性</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Articles -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">必須記事と研究</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-3xl p-6 border border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">What VUCA Really Means for You</h3>
+                    <p class="text-sm text-emerald-600 font-medium mb-3">ハーバード・ビジネス・レビュー、2014年</p>
+                    <p class="text-sm text-gray-700">VUCA次元を明確にし、評価と対応のための実践的なフレームワークを提供する重要なHBR記事。ビジネスコンテキストでVUCAを理解するための必須読書です。</p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 border border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">VUCA 2.0: A strategy for steady leadership in an unsteady world</h3>
+                    <p class="text-sm text-blue-600 font-medium mb-3">フォーブス、2020年</p>
+                    <p class="text-sm text-gray-700">パンデミック後のVUCAの現代的な解釈で、フレームワークがどのように進化し、現代の課題に関連性を保っているかについて議論します。</p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 border border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">From VUCA to BANI</h3>
+                    <p class="text-sm text-purple-600 font-medium mb-3">ジャメ・カシオ、2020年</p>
+                    <p class="text-sm text-gray-700">VUCAを超えた進化としてのBANIフレームワークの導入で、脆弱-不安-非線形-不可解性が現代の状況のより正確な説明であると主張しています。</p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 border border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Leading in a VUCA World</h3>
+                    <p class="text-sm text-amber-600 font-medium mb-3">マッキンゼー・クォータリー、2019年</p>
+                    <p class="text-sm text-gray-700">VUCA環境に必要なリーダーシップ能力に関するマッキンゼーの研究で、業界を超えた成功したリーダーの分析に基づいています。</p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 border border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Adaptive Leadership: The Heifetz Collection</h3>
+                    <p class="text-sm text-emerald-600 font-medium mb-3">ハーバード・ビジネス・レビュー、2018年</p>
+                    <p class="text-sm text-gray-700">適応的リーダーシップに関するハイフェッツの作品のコンパイルで、曖昧で複雑な課題をリードするための包括的なツールキットを提供します。</p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 border border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Thriving in the VUCA World</h3>
+                    <p class="text-sm text-blue-600 font-medium mb-3">デロイト・インサイト、2021年</p>
+                    <p class="text-sm text-gray-700">VUCAで繁栄するために必要な組織的能力に関するデロイトの研究で、ケーススタディと実装フレームワークを含みます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools and Templates -->
+    <section id="tools" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">実践的なツールとテンプレート</h2>
+            
+            <div class="space-y-8">
+                <div class="bg-emerald-50 border border-emerald-200 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-6">VUCA評価ツール</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-xl p-6 border border-emerald-100">
+                            <h4 class="text-lg font-bold text-gray-900 mb-3">VUCA環境評価マトリックス</h4>
+                            <p class="text-sm text-gray-700 mb-4">あなたの組織または業界で最も普及しているVUCA次元を評価します。各次元の強度を評価し、優先対応領域を特定します。</p>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <p class="text-xs font-medium text-gray-900 mb-2">評価基準：</p>
+                                <ul class="text-xs text-gray-700 space-y-1">
+                                    <li>各次元を評価：低（1）から高（5）</li>
+                                    <li>頻度、規模、影響を考慮</li>
+                                    <li>時間期間と競合他社間で比較</li>
+                                    <li>組織の準備状態のギャップを特定</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-emerald-100">
+                            <h4 class="text-lg font-bold text-gray-900 mb-3">組織VUCA準備度スコアカード</h4>
+                            <p class="text-sm text-gray-700">人、プロセス、システム、文化次元にわたる組織の能力を評価します。強みと開発優先事項を特定します。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50 border border-blue-200 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-6">戦略計画ツール</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-xl p-6 border border-blue-100">
+                            <h4 class="text-lg font-bold text-gray-900 mb-3">シナリオ計画テンプレート</h4>
+                            <p class="text-sm text-gray-700">複数の未来に備えるためのシナリオ計画演習を構造化します。主要な不確実性を特定し、あり得るシナリオを開発し、対応戦略を作成します。</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-blue-100">
+                            <h4 class="text-lg font-bold text-gray-900 mb-3">VUCA戦略キャンバス</h4>
+                            <p class="text-sm text-gray-700">各VUCA次元への戦略的対応をマッピングします。イニシアチブ、リソース、能力を優先課題に調整します。</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-blue-100">
+                            <h4 class="text-lg font-bold text-gray-900 mb-3">事前分析ワークシート</h4>
+                            <p class="text-sm text-gray-700">戦略を実装する前に失敗モードを予測します。リスクを特定し、軽減計画を開発し、イニシアチブに回復力を組み込みます。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-purple-50 border border-purple-200 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-6">意思決定フレームワーク</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-xl p-6 border border-purple-100">
+                            <h4 class="text-lg font-bold text-gray-900 mb-3">VUCA意思決定マトリックス</h4>
+                            <p class="text-sm text-gray-700">意思決定アプローチをVUCA条件にマッチングします。分析するか行動するか、集中するか分散するか、計画するか実験するかを決定します。</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-purple-100">
+                            <h4 class="text-lg font-bold text-gray-900 mb-3">迅速な実験フレームワーク</h4>
+                            <p class="text-sm text-gray-700">曖昧な状況で迅速に学習するための実験を構造化します。仮説、成功メトリクス、学習キャプチャプロセスを定義します。</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-purple-100">
+                            <h4 class="text-lg font-bold text-gray-900 mb-3">意思決定ジャーナルテンプレート</h4>
+                            <p class="text-sm text-gray-700">意思決定、仮定、結果を文書化して、時間の経過とともに意思決定の質を向上させます。構造化された内省を通じて組織学習を構築します。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 border border-amber-200 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-6">リーダーシップ開発ツール</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-xl p-6 border border-amber-100">
+                            <h4 class="text-lg font-bold text-gray-900 mb-3">VUCAリーダーシップ能力モデル</h4>
+                            <p class="text-sm text-gray-700">VUCA要件に対してリーダーシップ能力を評価します。開発ニーズを特定し、個人化された学習計画を作成します。</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-amber-100">
+                            <h4 class="text-lg font-bold text-gray-900 mb-3">事後レビューテンプレート</h4>
+                            <p class="text-sm text-gray-700">構造化された内省を通じてVUCA状況から学習をキャプチャします。何が期待されたか、実際に何が起こったか、なぜ、何を違うようにするか。</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 border border-amber-100">
+                            <h4 class="text-lg font-bold text-gray-900 mb-3">360度VUCAリーダーシップ評価</h4>
+                            <p class="text-sm text-gray-700">VUCAリーダーシップ行動に関するマルチステークホルダーフィードバックを収集します。盲点を特定し、開発領域を優先順位付けします。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section id="case-studies" class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">詳細なケーススタディ</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-3xl p-8 border border-gray-200">
+                    <div class="bg-emerald-100 rounded-xl px-4 py-2 inline-block mb-4">
+                        <p class="text-sm font-bold text-emerald-700">テクノロジー</p>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Netflix：デジタル破壊のナビゲート</h3>
+                    <p class="text-sm text-gray-700 mb-4">NetflixがDVDレンタルからストリーミング、コンテンツ制作への方向転換をどのように行ったか、変動するエンターテインメント業界での戦略的アジリティと市場先見性を示しています。</p>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-start gap-2">
+                            <span class="text-emerald-600 text-sm">■</span>
+                            <p class="text-xs text-gray-700">15年間にわたる複数の戦略的方向転換</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-emerald-600 text-sm">■</span>
+                            <p class="text-xs text-gray-700">不確実性の下でのデータ駆動型意思決定</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-emerald-600 text-sm">■</span>
+                            <p class="text-xs text-gray-700">イノベーションを可能にする文化的変革</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 border border-gray-200">
+                    <div class="bg-blue-100 rounded-xl px-4 py-2 inline-block mb-4">
+                        <p class="text-sm font-bold text-blue-700">製造業</p>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">トヨタ：アジリティを通じた回復力の構築</h3>
+                    <p class="text-sm text-gray-700 mb-4">トヨタの2011年津波とサプライチェーン混乱への対応で、複雑なシステムでの回復力原則と分散問題解決を示しています。</p>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-start gap-2">
+                            <span class="text-blue-600 text-sm">■</span>
+                            <p class="text-xs text-gray-700">サプライヤー協力による迅速な回復</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-blue-600 text-sm">■</span>
+                            <p class="text-xs text-gray-700">あらゆるレベルでの権限を与えられた意思決定</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-blue-600 text-sm">■</span>
+                            <p class="text-xs text-gray-700">長期的な回復力投資</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 border border-gray-200">
+                    <div class="bg-purple-100 rounded-xl px-4 py-2 inline-block mb-4">
+                        <p class="text-sm font-bold text-purple-700">ヘルスケア</p>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">クリーブランド・クリニック：デジタルヘルス変革</h3>
+                    <p class="text-sm text-gray-700 mb-4">クリーブランド・クリニックが遠隔医療とデジタルヘルスに関する曖昧性をどのようにナビゲートしたか、パンデミック中に実験し、成功モデルを拡大しました。</p>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-2">
+                            <span class="text-purple-600 text-sm">■</span>
+                            <p class="text-xs text-gray-700">迅速な遠隔医療の拡大</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-purple-600 text-sm">■</span>
+                            <p class="text-xs text-gray-700">技術とプロセスのイノベーション</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-purple-600 text-sm">■</span>
+                            <p class="text-xs text-gray-700">スタッフトレーニングとチェンジマネジメント</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 border border-gray-200">
+                    <div class="bg-amber-100 rounded-xl px-4 py-2 inline-block mb-4">
+                        <p class="text-sm font-bold text-amber-700">小売</p>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">ザラ：ファストファッションサプライチェーンアジリティ</h3>
+                    <p class="text-sm text-gray-700 mb-4">ザラの垂直統合された、非常に応答性の高いサプライチェーンは、変動するファッショントレンドと需要変動への迅速な適応を可能にします。</p>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-2">
+                            <span class="text-amber-600 text-sm">■</span>
+                            <p class="text-xs text-gray-700">2週間のデザインから店舗へのサイクル</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-amber-600 text-sm">■</span>
+                            <p class="text-xs text-gray-700">リアルタイム需要センシング</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-amber-600 text-sm">■</span>
+                            <p class="text-xs text-gray-700">速度を可能にする垂直統合</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Programs -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">VUCAトレーニングプログラム</h2>
+            <p class="text-lg text-gray-700 mb-12">VUCAリーダーシップ能力を開発するための推奨プログラムと認定資格。</p>
+            
+            <div class="space-y-6">
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">VUCA環境のためのリーダーシップシミュレーション</h3>
+                            <p class="text-sm text-emerald-600 font-medium mb-3">各種プロバイダー（CCL、IMD、ハーバード・ビジネス・パブリッシング）</p>
+                            <p class="text-gray-700 mb-4">リーダーを現実的なVUCAシナリオに配置する没入型シミュレーション体験。プレッシャーの下での意思決定、チーム調整、適応的リーダーシップを実践します。</p>
+                            <div class="grid md:grid-cols-3 gap-3">
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <p class="text-xs font-bold text-gray-900">期間</p>
+                                    <p class="text-xs text-gray-700">1-3日の集中</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <p class="text-xs font-bold text-gray-900">形式</p>
+                                    <p class="text-xs text-gray-700">対面またはバーチャル</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <p class="text-xs font-bold text-gray-900">レベル</p>
+                                    <p class="text-xs text-gray-700">中級から上級リーダー</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">アジャイルリーダーシップ認定</h3>
+                            <p class="text-sm text-blue-600 font-medium mb-3">スクラム・アライアンス、SAFe、ICAgile</p>
+                            <p class="text-gray-700 mb-4">VUCA環境に適用可能なアジャイル手法と原則の包括的なトレーニング。反復計画、迅速な適応、チームエンパワーメントを学びます。</p>
+                            <div class="grid md:grid-cols-3 gap-3">
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <p class="text-xs font-bold text-gray-900">期間</p>
+                                    <p class="text-xs text-gray-700">2-5日プラス学習</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <p class="text-xs font-bold text-gray-900">形式</p>
+                                    <p class="text-xs text-gray-700">認定コース</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <p class="text-xs font-bold text-gray-900">レベル</p>
+                                    <p class="text-xs text-gray-700">すべてのレベル</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">戦略的将来展望とシナリオ計画</h3>
+                            <p class="text-sm text-purple-600 font-medium mb-3">未来研究所、オックスフォード・シナリオ・プログラム</p>
+                            <p class="text-gray-700 mb-4">将来のトレンドを予測し、不確実な環境のための堅牢な戦略を開発する方法論を学びます。複数の未来について体系的に考える能力を構築します。</p>
+                            <div class="grid md:grid-cols-3 gap-3">
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <p class="text-xs font-bold text-gray-900">期間</p>
+                                    <p class="text-xs text-gray-700">3-5日の集中</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <p class="text-xs font-bold text-gray-900">形式</p>
+                                    <p class="text-xs text-gray-700">ワークショップ+実践</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <p class="text-xs font-bold text-gray-900">レベル</p>
+                                    <p class="text-xs text-gray-700">上級戦略家</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="bg-amber-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">リーダーのためのシステム思考</h3>
+                            <p class="text-sm text-amber-600 font-medium mb-3">MITスローン、ペガサス・コミュニケーションズ、ウォーターズ・センター</p>
+                            <p class="text-gray-700 mb-4">複雑なシステムを理解し、影響を与える能力を開発します。組織システムでのレバレッジポイント、フィードバックループ、意図しない結果を特定する方法を学びます。</p>
+                            <div class="grid md:grid-cols-3 gap-3">
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <p class="text-xs font-bold text-gray-900">期間</p>
+                                    <p class="text-xs text-gray-700">2-4日</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <p class="text-xs font-bold text-gray-900">形式</p>
+                                    <p class="text-xs text-gray-700">インタラクティブワークショップ</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-3">
+                                    <p class="text-xs font-bold text-gray-900">レベル</p>
+                                    <p class="text-xs text-gray-700">中級から上級リーダー</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Resources -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">オンライン学習リソース</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-3xl p-6 border border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">MOOCとオンラインコース</h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li>Coursera：戦略的リーダーシップとマネジメント</li>
+                        <li>edX：複雑な組織でのリードチェンジ</li>
+                        <li>LinkedIn Learning：VUCAリーダーシップ</li>
+                        <li>Udemy：アジャイルリーダーシップの基礎</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 border border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">ポッドキャスト</h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li>HBR IdeaCast：危機におけるリーダーシップ</li>
+                        <li>The Knowledge Project：システム思考</li>
+                        <li>Masters of Scale：急速成長戦略</li>
+                        <li>WorkLife with Adam Grant：組織アジリティ</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 border border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">ニュースレターとブログ</h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li>Farnam Street：メンタルモデル</li>
+                        <li>未来研究所：将来展望</li>
+                        <li>マッキンゼー・インサイト：戦略と組織</li>
+                        <li>デロイト・インサイト：働き方の未来</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-emerald-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">VUCAの旅を始める</h2>
+            <p class="text-xl text-emerald-50 mb-8">包括的なフレームワークと事例を探索して、VUCA能力を構築してください。</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="framework.html" class="px-8 py-3 bg-white text-emerald-600 rounded-lg font-medium hover:bg-emerald-50">フレームワークを探索</a>
+                <a href="leadership.html" class="px-8 py-3 border border-white text-white rounded-lg font-medium hover:bg-emerald-700">リーダーシップガイド</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">VUCA</h3>
+                    <p class="text-sm text-gray-400">VUCAワールドを理解し、ナビゲートするための包括的なリソース。</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">学習</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white">VUCAとは</a></li>
+                        <li><a href="framework.html" class="hover:text-white">VUCAフレームワーク</a></li>
+                        <li><a href="examples.html" class="hover:text-white">実例</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">リーダーシップ</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="leadership.html" class="hover:text-white">VUCAリーダーシップ</a></li>
+                        <li><a href="leadership.html#skills" class="hover:text-white">主要スキル</a></li>
+                        <li><a href="leadership.html#training" class="hover:text-white">トレーニングプログラム</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">リソース</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="resources.html" class="hover:text-white">書籍・記事</a></li>
+                        <li><a href="resources.html#tools" class="hover:text-white">ツール・テンプレート</a></li>
+                        <li><a href="resources.html#case-studies" class="hover:text-white">ケーススタディ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-sm text-center text-gray-400">
+                <p>2025 VUCA. VUCA教育とリーダーシップ開発のための専門リソース。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

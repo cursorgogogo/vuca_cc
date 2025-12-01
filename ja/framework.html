@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUCAフレームワーク：完全分析と実装ガイド</title>
+    <meta name="description" content="VUCAフレームワークの詳細ガイド。組織における変動性、不確実性、複雑性、曖昧性を分析し、対応し、活用する方法を学ぶ。">
+    <link rel="icon" type="image/svg+xml" href="../V.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900">
+    
+    <!-- Navigation -->
+    <nav class="border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-emerald-600">VUCA</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-emerald-600">ホーム</a>
+                    <a href="framework.html" class="text-gray-900 hover:text-emerald-600 font-medium">フレームワーク</a>
+                    <a href="leadership.html" class="text-gray-700 hover:text-emerald-600">リーダーシップ</a>
+                    <a href="action-guide.html" class="text-gray-700 hover:text-emerald-600">アクションガイド</a>
+                    <a href="examples.html" class="text-gray-700 hover:text-emerald-600">事例</a>
+                    <a href="resources.html" class="text-gray-700 hover:text-emerald-600">リソース</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-emerald-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">ホーム</a>
+                <a href="framework.html" class="block px-3 py-2 rounded-md text-gray-900 font-medium bg-emerald-50">フレームワーク</a>
+                <a href="leadership.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">リーダーシップ</a>
+                <a href="action-guide.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">アクションガイド</a>
+                <a href="examples.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">事例</a>
+                <a href="resources.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">リソース</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-emerald-50 to-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl font-bold text-gray-900 mb-6">VUCAフレームワーク詳細解説</h1>
+            <p class="text-xl text-gray-700 max-w-3xl">実践的な分析ツール、戦略的対応モデル、各次元の実装戦略でVUCAフレームワークを完全にマスターする。</p>
+        </div>
+    </section>
+
+    <!-- Framework Analysis Matrix -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">VUCA分析マトリックス</h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-gray-50">
+                            <th class="border border-gray-200 px-6 py-4 text-left font-bold text-gray-900">次元</th>
+                            <th class="border border-gray-200 px-6 py-4 text-left font-bold text-gray-900">定義</th>
+                            <th class="border border-gray-200 px-6 py-4 text-left font-bold text-gray-900">主要指標</th>
+                            <th class="border border-gray-200 px-6 py-4 text-left font-bold text-gray-900">対応</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white">
+                            <td class="border border-gray-200 px-6 py-4 font-bold text-emerald-600">変動性</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">変化の速度と規模</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">急速な市場変動</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">アジリティと応答性を構築</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="border border-gray-200 px-6 py-4 font-bold text-blue-600">不確実性</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">予測可能性の欠如</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">信頼性の低い予測</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">情報と洞察を収集</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="border border-gray-200 px-6 py-4 font-bold text-purple-600">複雑性</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">複数の相互関連要因</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">システム的な依存関係</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">再構築と明確化</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="border border-gray-200 px-6 py-4 font-bold text-amber-600">曖昧性</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">不明確な因果関係</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">複数の解釈</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">仮説を実験とテスト</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Analysis -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">詳細フレームワーク分析</h2>
+            
+            <!-- Volatility -->
+            <div class="mb-16 bg-white rounded-3xl p-8 border border-gray-200">
+                <h3 class="text-3xl font-bold text-emerald-600 mb-6">変動性分析</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">特徴</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-emerald-500 rounded-full flex-shrink-0"></span>
+                                <span>変化が頻繁で劇的</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-emerald-500 rounded-full flex-shrink-0"></span>
+                                <span>変化の性質は分かっているが、タイミングは予測不可能</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-emerald-500 rounded-full flex-shrink-0"></span>
+                                <span>市場、価格、需要が大幅に変動</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-emerald-500 rounded-full flex-shrink-0"></span>
+                                <span>技術的混乱が急速に発生</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">戦略的対応</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                                <p class="font-bold text-gray-900 mb-2">リザーブを構築</p>
+                                <p class="text-sm text-gray-700">ショックを吸収するための金融バッファ、余剰能力、戦略的リザーブを維持</p>
+                            </div>
+                            <div class="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                                <p class="font-bold text-gray-900 mb-2">速度を向上</p>
+                                <p class="text-sm text-gray-700">意思決定プロセスを加速し、官僚主義を削減</p>
+                            </div>
+                            <div class="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                                <p class="font-bold text-gray-900 mb-2">シナリオ計画</p>
+                                <p class="text-sm text-gray-700">異なる結果に対する複数のシナリオと緊急時計画を開発</p>
+                            </div>
+                            <div class="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                                <p class="font-bold text-gray-900 mb-2">リアルタイム監視</p>
+                                <p class="text-sm text-gray-700">継続的な環境スキャンと早期警告のためのシステムを実装</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">ツールと手法</h4>
+                        <div class="bg-gray-50 rounded-xl p-6">
+                            <ul class="space-y-2 text-gray-700">
+                                <li>市場変動性指数とトレンド分析</li>
+                                <li>リアルタイムダッシュボードとKPI監視</li>
+                                <li>アジャイル手法とスプリント計画</li>
+                                <li>迅速なプロトタイピングと反復開発</li>
+                                <li>動的リソース配分システム</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Uncertainty -->
+            <div class="mb-16 bg-white rounded-3xl p-8 border border-gray-200">
+                <h3 class="text-3xl font-bold text-blue-600 mb-6">不確実性分析</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">特徴</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span>
+                                <span>結果の予測可能性が限定的</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span>
+                                <span>歴史的データが将来のパターンを示さない可能性</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span>
+                                <span>因果関係が不明確</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span>
+                                <span>情報の欠如が確信を持った予測を妨げる</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">戦略的対応</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                                <p class="font-bold text-gray-900 mb-2">インテリジェンスを収集</p>
+                                <p class="text-sm text-gray-700">調査、顧客洞察、競争インテリジェンスに投資</p>
+                            </div>
+                            <div class="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                                <p class="font-bold text-gray-900 mb-2">情報を多様化</p>
+                                <p class="text-sm text-gray-700">複数の視点と多様なデータソースを求める</p>
+                            </div>
+                            <div class="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                                <p class="font-bold text-gray-900 mb-2">パートナーシップを構築</p>
+                                <p class="text-sm text-gray-700">専門家や業界ネットワークと協力</p>
+                            </div>
+                            <div class="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                                <p class="font-bold text-gray-900 mb-2">柔軟な計画</p>
+                                <p class="text-sm text-gray-700">情報が現れるにつれて調整できる適応可能な計画を作成</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">ツールと手法</h4>
+                        <div class="bg-gray-50 rounded-xl p-6">
+                            <ul class="space-y-2 text-gray-700">
+                                <li>確率的予測とモンテカルロシミュレーション</li>
+                                <li>顧客調査と民族誌的研究</li>
+                                <li>専門家パネルとデルファイ技法</li>
+                                <li>パイロットプログラムと小規模テスト</li>
+                                <li>オプションベースの計画と段階的投資</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complexity -->
+            <div class="mb-16 bg-white rounded-3xl p-8 border border-gray-200">
+                <h3 class="text-3xl font-bold text-purple-600 mb-6">複雑性分析</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">特徴</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-purple-500 rounded-full flex-shrink-0"></span>
+                                <span>複数の相互接続された部分と変数</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-purple-500 rounded-full flex-shrink-0"></span>
+                                <span>システムレベルの相互作用が創発的な行動を生み出す</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-purple-500 rounded-full flex-shrink-0"></span>
+                                <span>個々の要因を分離することが困難</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-purple-500 rounded-full flex-shrink-0"></span>
+                                <span>線形思考では全体像を捉えられない</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">戦略的対応</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
+                                <p class="font-bold text-gray-900 mb-2">構造を簡素化</p>
+                                <p class="text-sm text-gray-700">複雑な問題を管理可能なコンポーネントに分解</p>
+                            </div>
+                            <div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
+                                <p class="font-bold text-gray-900 mb-2">システム思考</p>
+                                <p class="text-sm text-gray-700">システム内の関係とフィードバックループをマッピング</p>
+                            </div>
+                            <div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
+                                <p class="font-bold text-gray-900 mb-2">専門家チーム</p>
+                                <p class="text-sm text-gray-700">多様な専門知識を持つクロスファンクショナルチームを編成</p>
+                            </div>
+                            <div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
+                                <p class="font-bold text-gray-900 mb-2">明確なコミュニケーション</p>
+                                <p class="text-sm text-gray-700">共通言語と視覚的フレームワークを確立</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">ツールと手法</h4>
+                        <div class="bg-gray-50 rounded-xl p-6">
+                            <ul class="space-y-2 text-gray-700">
+                                <li>システムマッピングと因果ループ図</li>
+                                <li>ステークホルダー分析とネットワークマッピング</li>
+                                <li>デザイン思考と共創ワークショップ</li>
+                                <li>モジュラー設計とマイクロサービスアーキテクチャ</li>
+                                <li>クロスファンクショナルコラボレーションプラットフォーム</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ambiguity -->
+            <div class="bg-white rounded-3xl p-8 border border-gray-200">
+                <h3 class="text-3xl font-bold text-amber-600 mb-6">曖昧性分析</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">特徴</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-amber-500 rounded-full flex-shrink-0"></span>
+                                <span>出来事や状況の意味が不明確</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-amber-500 rounded-full flex-shrink-0"></span>
+                                <span>複数の有効な解釈が存在</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-amber-500 rounded-full flex-shrink-0"></span>
+                                <span>現在の状況に対する先例がない</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-amber-500 rounded-full flex-shrink-0"></span>
+                                <span>正しい行動方針を決定することが困難</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">戦略的対応</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+                                <p class="font-bold text-gray-900 mb-2">迅速に実験</p>
+                                <p class="text-sm text-gray-700">迅速な実験を通じて複数の仮説をテスト</p>
+                            </div>
+                            <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+                                <p class="font-bold text-gray-900 mb-2">明確性を作る</p>
+                                <p class="text-sm text-gray-700">意思決定を導く原則とフレームワークを定義</p>
+                            </div>
+                            <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+                                <p class="font-bold text-gray-900 mb-2">パラドックスを受け入れる</p>
+                                <p class="text-sm text-gray-700">複数の真実が共存できることを受け入れる</p>
+                            </div>
+                            <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+                                <p class="font-bold text-gray-900 mb-2">継続的に学習</p>
+                                <p class="text-sm text-gray-700">すべてのイニシアチブに組織学習を組み込む</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">ツールと手法</h4>
+                        <div class="bg-gray-50 rounded-xl p-6">
+                            <ul class="space-y-2 text-gray-700">
+                                <li>リーンスタートアップ手法とMVP開発</li>
+                                <li>A/Bテストと制御実験</li>
+                                <li>イノベーションラボとサンドボックス環境</li>
+                                <li>事後レビューとレトロスペクティブ</li>
+                                <li>意思決定ジャーナルと内省実践</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Framework -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">VUCA実装フレームワーク</h2>
+            <p class="text-lg text-gray-700 mb-12">組織にVUCA分析を適用するための構造化アプローチ。</p>
+            
+            <div class="space-y-6">
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">環境を評価する</h3>
+                            <p class="text-gray-700 mb-4">あなたの業界、市場、または組織で最も普及しているVUCA次元を評価します。異なるセクターは異なるVUCA要因の組み合わせに直面しています。</p>
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <p class="text-sm font-medium text-gray-900 mb-2">主要な質問：</p>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>市場状況はどのくらい急速に変化しますか？</li>
+                                    <li>顧客の行動はどの程度予測可能ですか？</li>
+                                    <li>私たちの成功に影響を与える変数はいくつありますか？</li>
+                                    <li>因果関係はどの程度明確ですか？</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">対応を優先順位付け</h3>
+                            <p class="text-gray-700 mb-4">組織に影響を与える最も重要なVUCA次元にリソースを集中させます。すべての組織が4つの次元すべてに等しく焦点を当てる必要はありません。</p>
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <p class="text-sm font-medium text-gray-900 mb-2">対応優先順位マトリックス：</p>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>高変動性：アジリティとリザーブを構築</li>
+                                    <li>高不確実性：インテリジェンスに投資</li>
+                                    <li>高複雑性：簡素化と明確化</li>
+                                    <li>高曖昧性：実験と学習</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">能力を構築</h3>
+                            <p class="text-gray-700 mb-4">あなたのVUCAプロファイルに合わせた組織的能力を開発します。これには、人、プロセス、システム、文化が含まれます。</p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <p class="text-sm font-bold text-gray-900 mb-2">人的能力</p>
+                                    <p class="text-sm text-gray-700">トレーニング、スキル開発、マインドセットの転換</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <p class="text-sm font-bold text-gray-900 mb-2">プロセス能力</p>
+                                    <p class="text-sm text-gray-700">アジャイル手法、意思決定フレームワーク</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">監視と適応</h3>
+                            <p class="text-gray-700 mb-4">VUCA環境を継続的に評価し、戦略を調整します。VUCA要因の性質と強度は時間の経過とともに変化します。</p>
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <p class="text-sm font-medium text-gray-900 mb-2">監視アプローチ：</p>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>四半期ごとの環境スキャン</li>
+                                    <li>定期的なステークホルダーフィードバック</li>
+                                    <li>戦略レビューとピボット</li>
+                                    <li>継続的な学習の統合</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-emerald-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">リーダーシップにVUCAフレームワークを適用する</h2>
+            <p class="text-xl text-emerald-50 mb-8">VUCA環境をナビゲートするための実践的なリーダーシップ戦略を探索してください。</p>
+            <a href="leadership.html" class="inline-block px-8 py-3 bg-white text-emerald-600 rounded-lg font-medium hover:bg-emerald-50">リーダーシップガイドを探索</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">VUCA</h3>
+                    <p class="text-sm text-gray-400">VUCAワールドを理解し、ナビゲートするための包括的なリソース。</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">学習</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white">VUCAとは</a></li>
+                        <li><a href="framework.html" class="hover:text-white">VUCAフレームワーク</a></li>
+                        <li><a href="examples.html" class="hover:text-white">実例</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">リーダーシップ</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="leadership.html" class="hover:text-white">VUCAリーダーシップ</a></li>
+                        <li><a href="leadership.html#skills" class="hover:text-white">主要スキル</a></li>
+                        <li><a href="leadership.html#training" class="hover:text-white">トレーニングプログラム</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">リソース</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="resources.html" class="hover:text-white">書籍・記事</a></li>
+                        <li><a href="resources.html#tools" class="hover:text-white">ツール・テンプレート</a></li>
+                        <li><a href="resources.html#case-studies" class="hover:text-white">ケーススタディ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-sm text-center text-gray-400">
+                <p>2025 VUCA. VUCA教育とリーダーシップ開発のための専門リソース。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
