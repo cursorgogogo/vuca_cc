@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <link rel="icon" type="image/svg+xml" href="V.svg">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-900 overflow-x-hidden">
     <!-- Navigation -->
     <nav class="border-b border-gray-200 bg-white sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -206,10 +206,17 @@
             </div>
 
             <!-- VUCA Dimensions Visualization -->
-            <div class="mt-16 bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-3xl p-8 md:p-12">
+            <div class="mt-16 bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12">
                 <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">VUCA Dimensions Framework</h3>
-                <div class="relative max-w-2xl mx-auto overflow-visible">
-                    <svg viewBox="0 0 700 700" class="w-full h-auto" style="min-height: 500px;">
+                <div class="relative max-w-2xl mx-auto overflow-hidden">
+                    <svg viewBox="0 0 700 700" class="w-full h-auto" style="min-height: 400px;" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <style>
+                                @media (max-width: 640px) {
+                                    .svg-label { display: none; }
+                                }
+                            </style>
+                        </defs>
                         <!-- Background circle -->
                         <circle cx="350" cy="350" r="220" fill="none" stroke="#e5e7eb" stroke-width="2" opacity="0.5"/>
                         
@@ -224,7 +231,7 @@
                             <text x="350" y="125" text-anchor="middle" font-size="18" font-weight="bold" fill="#047857">V</text>
                             <text x="350" y="145" text-anchor="middle" font-size="11" font-weight="500" fill="#374151">Volatility</text>
                             <path d="M 350 82 Q 370 60 390 45" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.5" stroke-dasharray="4,4"/>
-                            <text x="400" y="50" font-size="10" fill="#6b7280">Rapid Change</text>
+                            <text x="400" y="50" font-size="10" fill="#6b7280" class="svg-label">Rapid Change</text>
                         </g>
                         
                         <!-- Uncertainty - Right -->
@@ -234,7 +241,7 @@
                             <text x="520" y="345" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e40af">U</text>
                             <text x="520" y="365" text-anchor="middle" font-size="11" font-weight="500" fill="#374151">Uncertainty</text>
                             <path d="M 568 350 Q 590 330 605 310" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.5" stroke-dasharray="4,4"/>
-                            <text x="620" y="315" font-size="10" fill="#6b7280">Unpredictable</text>
+                            <text x="620" y="315" font-size="10" fill="#6b7280" class="svg-label">Unpredictable</text>
                         </g>
                         
                         <!-- Complexity - Bottom -->
@@ -244,7 +251,7 @@
                             <text x="350" y="565" text-anchor="middle" font-size="18" font-weight="bold" fill="#6b21a8">C</text>
                             <text x="350" y="585" text-anchor="middle" font-size="11" font-weight="500" fill="#374151">Complexity</text>
                             <path d="M 350 618 Q 330 640 310 655" fill="none" stroke="#a855f7" stroke-width="1.5" opacity="0.5" stroke-dasharray="4,4"/>
-                            <text x="280" y="660" font-size="10" fill="#6b7280">Interconnected</text>
+                            <text x="280" y="660" font-size="10" fill="#6b7280" class="svg-label">Interconnected</text>
                         </g>
                         
                         <!-- Ambiguity - Left -->
@@ -254,7 +261,7 @@
                             <text x="180" y="345" text-anchor="middle" font-size="18" font-weight="bold" fill="#92400e">A</text>
                             <text x="180" y="365" text-anchor="middle" font-size="11" font-weight="500" fill="#374151">Ambiguity</text>
                             <path d="M 132 350 Q 110 330 95 310" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.5" stroke-dasharray="4,4"/>
-                            <text x="60" y="315" font-size="10" fill="#6b7280">Multiple Views</text>
+                            <text x="60" y="315" font-size="10" fill="#6b7280" class="svg-label">Multiple Views</text>
                         </g>
                         
                         <!-- Interconnecting lines -->
@@ -324,10 +331,10 @@
             <p class="text-lg text-gray-700 leading-relaxed mb-12">Bob Johansen of the Institute for the Future developed VUCA Prime as a strategic response framework. Each element of VUCA has a corresponding positive attribute that leaders can cultivate.</p>
             
             <!-- VUCA to VUCA Prime Transformation Diagram -->
-            <div class="mb-16 bg-gradient-to-br from-emerald-50 via-white to-blue-50 border border-gray-200 rounded-3xl p-8 md:p-12">
+            <div class="mb-16 bg-gradient-to-br from-emerald-50 via-white to-blue-50 border border-gray-200 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12">
                 <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">VUCA to VUCA Prime Transformation</h3>
-                <div class="relative max-w-4xl mx-auto overflow-visible">
-                    <svg viewBox="0 0 900 450" class="w-full h-auto" style="min-height: 400px;">
+                <div class="relative max-w-4xl mx-auto overflow-hidden">
+                    <svg viewBox="0 0 900 450" class="w-full h-auto" style="min-height: 300px;" preserveAspectRatio="xMidYMid meet">
                         <defs>
                             <marker id="arrowhead-trans" markerWidth="11" markerHeight="11" refX="10.5" refY="5.5" orient="auto" markerUnits="userSpaceOnUse">
                                 <path d="M 0 0 L 11 5.5 L 0 11 Z" fill="#6b7280" opacity="0.8"/>
@@ -435,9 +442,9 @@
             <h2 class="text-4xl font-bold text-gray-900 mb-6">VUCA Leadership Response Model</h2>
             <p class="text-lg text-gray-700 leading-relaxed mb-12">Effective leadership in VUCA environments requires different capabilities depending on which dimensions dominate. This model illustrates how leaders adapt their approach based on the primary VUCA challenge.</p>
             
-            <div class="bg-gradient-to-br from-white via-gray-50 to-white border border-gray-200 rounded-3xl p-8 md:p-12">
-                <div class="relative max-w-3xl mx-auto overflow-visible">
-                    <svg viewBox="0 0 750 750" class="w-full h-auto" style="min-height: 600px;">
+            <div class="bg-gradient-to-br from-white via-gray-50 to-white border border-gray-200 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12">
+                <div class="relative max-w-3xl mx-auto overflow-hidden">
+                    <svg viewBox="0 0 750 750" class="w-full h-auto" style="min-height: 400px;" preserveAspectRatio="xMidYMid meet">
                         <!-- Central leadership core -->
                         <circle cx="375" cy="375" r="75" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="3.5"/>
                         <text x="375" y="365" text-anchor="middle" font-size="16" font-weight="bold" fill="#047857">Leadership</text>
@@ -535,9 +542,9 @@
             <h2 class="text-4xl font-bold text-gray-900 mb-6">VUCA Decision Matrix</h2>
             <p class="text-lg text-gray-700 leading-relaxed mb-12">Understanding the intensity of each VUCA dimension helps leaders choose appropriate strategies. This matrix visualizes how different combinations of VUCA factors require different leadership approaches.</p>
             
-            <div class="bg-white border border-gray-200 rounded-3xl p-8 md:p-12">
-                <div class="relative max-w-5xl mx-auto overflow-visible">
-                    <svg viewBox="0 0 800 600" class="w-full h-auto" style="min-height: 500px;">
+            <div class="bg-white border border-gray-200 rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12">
+                <div class="relative max-w-5xl mx-auto overflow-hidden">
+                    <svg viewBox="0 0 800 600" class="w-full h-auto" style="min-height: 400px;" preserveAspectRatio="xMidYMid meet">
                         <defs>
                             <pattern id="grid-matrix" width="25" height="25" patternUnits="userSpaceOnUse">
                                 <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#f3f4f6" stroke-width="0.5"/>
