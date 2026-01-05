@@ -8,6 +8,23 @@
     <link rel="canonical" href="https://vuca.cc/">
     <link rel="icon" type="image/svg+xml" href="V.svg">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes subtle-glow {
+            0%, 100% {
+                box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+            }
+            50% {
+                box-shadow: 0 10px 30px rgba(16, 185, 129, 0.25);
+            }
+        }
+        .assessment-button {
+            animation: subtle-glow 3s ease-in-out infinite;
+        }
+        .assessment-button:hover {
+            animation: none;
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.3);
+        }
+    </style>
 </head>
 <body class="bg-white text-gray-900 overflow-x-hidden">
     <!-- Navigation -->
@@ -146,8 +163,13 @@
                     </div>
 
                     <div class="text-center">
-                        <a href="assessment.html" class="inline-block px-10 py-4 bg-white text-emerald-600 rounded-lg font-bold text-lg hover:bg-emerald-50 transition shadow-lg hover:shadow-xl">
-                            Start Your Assessment Now
+                        <a href="assessment.html" class="assessment-button group relative inline-block px-10 py-4 bg-white text-emerald-600 rounded-lg font-bold text-lg transition-all duration-300 hover:bg-emerald-50">
+                            <span class="relative z-10 flex items-center gap-2">
+                                Start Your Assessment Now
+                                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </span>
                         </a>
                         <p class="text-emerald-100 text-sm mt-4">Free assessment • No registration required • Instant results</p>
                     </div>
@@ -1019,8 +1041,13 @@
                                 <span class="text-gray-700">Access actionable next steps and learning resources</span>
                             </li>
                         </ul>
-                        <a href="assessment.html" class="inline-block px-8 py-4 bg-emerald-600 text-white rounded-lg font-bold text-lg hover:bg-emerald-700 transition">
-                            Take Assessment Now
+                        <a href="assessment.html" class="group relative inline-block px-8 py-4 bg-emerald-600 text-white rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-emerald-700">
+                            <span class="relative z-10 flex items-center gap-2">
+                                Take Assessment Now
+                                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </span>
                         </a>
                     </div>
                     <div class="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-8 border border-emerald-100">
