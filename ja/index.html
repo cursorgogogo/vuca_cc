@@ -25,6 +25,7 @@
                     <a href="action-guide.html" class="text-gray-700 hover:text-emerald-600">アクションガイド</a>
                     <a href="examples.html" class="text-gray-700 hover:text-emerald-600">事例</a>
                     <a href="resources.html" class="text-gray-700 hover:text-emerald-600">リソース</a>
+                    <a href="assessment.html" class="text-gray-700 hover:text-emerald-600">評価</a>
                     <div class="relative ml-4">
                         <button id="lang-button" class="flex items-center text-gray-700 hover:text-emerald-600 focus:outline-none">
                             <span class="text-sm font-medium">JA</span>
@@ -56,6 +57,7 @@
                 <a href="action-guide.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">アクションガイド</a>
                 <a href="examples.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">事例</a>
                 <a href="resources.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">リソース</a>
+                <a href="assessment.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">評価</a>
                 <div class="border-t border-gray-200 mt-2 pt-2">
                     <div class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">言語</div>
                     <a href="../index.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">English</a>
@@ -65,34 +67,6 @@
         </div>
     </nav>
 
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-        const langButton = document.getElementById('lang-button');
-        const langMenu = document.getElementById('lang-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
-        });
-
-        if (langButton && langMenu) {
-            langButton.addEventListener('click', (e) => {
-                e.stopPropagation();
-                langMenu.classList.toggle('hidden');
-            });
-
-            document.addEventListener('click', (e) => {
-                if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
-                    langMenu.classList.add('hidden');
-                }
-            });
-        }
-    </script>
-
     <!-- Hero Section -->
     <section class="py-20 bg-gradient-to-br from-emerald-50 to-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,8 +74,49 @@
                 <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">VUCAワールドを理解する</h1>
                 <p class="text-xl text-gray-700 mb-4 max-w-3xl mx-auto">変動性、不確実性、複雑性、曖昧性は現代のビジネスとリーダーシップの課題を定義します。ダイナミックな環境で成功するためのフレームワークと戦略をマスターしましょう。</p>
                 <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#what-is-vuca" class="px-8 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700">はじめる</a>
-                    <a href="action-guide.html" class="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:border-emerald-600 hover:text-emerald-600">アクションガイド</a>
+                    <a href="#assessment-tool" class="px-8 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700">評価を開始</a>
+                    <a href="#what-is-vuca" class="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:border-emerald-600 hover:text-emerald-600">詳細を見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Tool - Featured Section -->
+    <section id="assessment-tool" class="py-16 bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-3xl p-8 md:p-12 text-white shadow-xl">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4">VUCAリーダーシップ評価</h2>
+                        <p class="text-xl text-emerald-50 mb-6 max-w-2xl mx-auto">あなたのリーダーシップスタイルを評価し、変動性、不確実性、複雑性、曖昧性のある環境にどの程度適応できるかを発見してください。わずか2分で個別の洞察を得られます。</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+                            <div class="text-3xl font-bold mb-2">12問</div>
+                            <div class="text-emerald-50 text-sm">すべてのVUCA次元をカバーする迅速な評価</div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+                            <div class="text-3xl font-bold mb-2">2分</div>
+                            <div class="text-emerald-50 text-sm">評価を完了して即座に結果を得る</div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-20">
+                            <div class="text-3xl font-bold mb-2">個別対応</div>
+                            <div class="text-emerald-50 text-sm">改善のためのカスタマイズされた推奨事項を受け取る</div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="assessment.html" class="assessment-button group relative inline-block px-10 py-4 bg-white text-emerald-600 rounded-lg font-bold text-lg transition-all duration-300 hover:bg-emerald-50">
+                            <span class="relative z-10 flex items-center gap-2">
+                                今すぐ評価を開始
+                                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <p class="text-emerald-100 text-sm mt-4">無料評価 • 登録不要 • 即座に結果</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -625,6 +640,68 @@
         </div>
     </section>
 
+    <!-- Assessment CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white border-2 border-emerald-200 rounded-3xl p-8 md:p-12 shadow-lg">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">VUCAリーダーシップを評価する準備はできていますか？</h2>
+                        <p class="text-lg text-gray-700 mb-6">包括的な評価を受けて、強みを理解し、4つのVUCA次元すべてにわたる開発領域を特定してください。</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-2 h-2 bg-emerald-500 rounded-full flex-shrink-0"></span>
+                                <span class="text-gray-700">変動性、不確実性、複雑性、曖昧性の詳細なスコアを取得</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-2 h-2 bg-emerald-500 rounded-full flex-shrink-0"></span>
+                                <span class="text-gray-700">個別の開発推奨事項を受け取る</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-2 h-2 bg-emerald-500 rounded-full flex-shrink-0"></span>
+                                <span class="text-gray-700">実行可能な次のステップと学習リソースにアクセス</span>
+                            </li>
+                        </ul>
+                        <a href="assessment.html" class="group relative inline-block px-8 py-4 bg-emerald-600 text-white rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-emerald-700">
+                            <span class="relative z-10 flex items-center gap-2">
+                                今すぐ評価を受ける
+                                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-8 border border-emerald-100">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">得られるもの</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-emerald-600 text-white rounded-lg w-12 h-12 flex items-center justify-center font-bold flex-shrink-0">1</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">総合VUCAスコア</h4>
+                                    <p class="text-sm text-gray-700">100点満点中の総適応性スコア</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-blue-600 text-white rounded-lg w-12 h-12 flex items-center justify-center font-bold flex-shrink-0">2</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">次元別内訳</h4>
+                                    <p class="text-sm text-gray-700">各VUCA次元の個別スコア</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-purple-600 text-white rounded-lg w-12 h-12 flex items-center justify-center font-bold flex-shrink-0">3</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">個別の洞察</h4>
+                                    <p class="text-sm text-gray-700">結果に合わせて調整されたフィードバックと推奨事項</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-20 bg-emerald-600 text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -675,6 +752,32 @@
             </div>
         </div>
     </footer>
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const langButton = document.getElementById('lang-button');
+        const langMenu = document.getElementById('lang-menu');
 
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        if (langButton && langMenu) {
+            langButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langMenu.classList.toggle('hidden');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
+                    langMenu.classList.add('hidden');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
