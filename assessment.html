@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUCA Leadership Assessment: Evaluate Your Leadership Style</title>
+    <meta name="description" content="Assess your leadership style and adaptability in VUCA environments. Get personalized insights on your strengths and development areas.">
+    <link rel="canonical" href="https://vuca.cc/assessment.html">
+    <link rel="icon" type="image/svg+xml" href="V.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-emerald-600">VUCA</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-700 hover:text-emerald-600">Home</a>
+                    <a href="framework.html" class="text-gray-700 hover:text-emerald-600">Framework</a>
+                    <a href="leadership.html" class="text-gray-700 hover:text-emerald-600">Leadership</a>
+                    <a href="action-guide.html" class="text-gray-700 hover:text-emerald-600">Action Guide</a>
+                    <a href="examples.html" class="text-gray-700 hover:text-emerald-600">Examples</a>
+                    <a href="resources.html" class="text-gray-700 hover:text-emerald-600">Resources</a>
+                    <a href="assessment.html" class="text-gray-900 hover:text-emerald-600 font-medium">Assessment</a>
+                    <div class="relative ml-4">
+                        <button id="lang-button" class="flex items-center text-gray-700 hover:text-emerald-600 focus:outline-none">
+                            <span class="text-sm font-medium">EN</span>
+                            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="lang-menu" class="hidden absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
+                            <a id="lang-link-en" href="assessment.html" class="block px-4 py-2 text-sm text-gray-900 bg-emerald-50 font-medium">English</a>
+                            <a id="lang-link-ja" href="ja/assessment.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">日本語</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-emerald-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Home</a>
+                <a href="framework.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Framework</a>
+                <a href="leadership.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Leadership</a>
+                <a href="action-guide.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Action Guide</a>
+                <a href="examples.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Examples</a>
+                <a href="resources.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Resources</a>
+                <a href="assessment.html" class="block px-3 py-2 rounded-md text-gray-900 font-medium bg-emerald-50">Assessment</a>
+                <div class="border-t border-gray-200 mt-2 pt-2">
+                    <div class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Language</div>
+                    <a id="lang-link-en-mobile" href="assessment.html" class="block px-3 py-2 rounded-md text-gray-900 font-medium bg-emerald-50">English</a>
+                    <a id="lang-link-ja-mobile" href="ja/assessment.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">日本語</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const langButton = document.getElementById('lang-button');
+        const langMenu = document.getElementById('lang-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        if (langButton && langMenu) {
+            langButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langMenu.classList.toggle('hidden');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
+                    langMenu.classList.add('hidden');
+                }
+            });
+        }
+
+        // Auto-update language switcher links based on current page
+        (function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const langLinkEn = document.getElementById('lang-link-en');
+            const langLinkJa = document.getElementById('lang-link-ja');
+            const langLinkEnMobile = document.getElementById('lang-link-en-mobile');
+            const langLinkJaMobile = document.getElementById('lang-link-ja-mobile');
+            
+            if (langLinkEn) langLinkEn.href = currentPage;
+            if (langLinkJa) langLinkJa.href = 'ja/' + currentPage;
+            if (langLinkEnMobile) langLinkEnMobile.href = currentPage;
+            if (langLinkJaMobile) langLinkJaMobile.href = 'ja/' + currentPage;
+        })();
+    </script>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-emerald-50 to-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">VUCA Leadership Assessment</h1>
+                <p class="text-xl text-gray-700 mb-4 max-w-3xl mx-auto">Evaluate your leadership style and identify how well you adapt to volatile, uncertain, complex, and ambiguous environments.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Container -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Assessment Form -->
+            <div id="assessment-form" class="bg-white border border-gray-200 rounded-3xl p-8">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Assessment Questions</h2>
+                    <p class="text-gray-700">Please rate each statement based on how well it describes your typical leadership behavior. Be honest with your responses for the most accurate results.</p>
+                </div>
+
+                <form id="vuca-assessment" class="space-y-8">
+                    <!-- Volatility Questions -->
+                    <div class="border-b border-gray-200 pb-8">
+                        <h3 class="text-2xl font-bold text-emerald-600 mb-6">Volatility</h3>
+                        <div class="space-y-6">
+                            <div class="question-group" data-dimension="volatility">
+                                <p class="text-gray-900 font-medium mb-3">I adapt my leadership approach quickly when circumstances change unexpectedly.</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q1" value="1" class="sr-only peer" required>
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Strongly Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q1" value="2" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q1" value="3" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Neutral</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q1" value="4" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Agree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q1" value="5" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Strongly Agree</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question-group" data-dimension="volatility">
+                                <p class="text-gray-900 font-medium mb-3">I maintain a clear vision that helps my team navigate through rapid changes.</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q2" value="1" class="sr-only peer" required>
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Strongly Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q2" value="2" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q2" value="3" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Neutral</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q2" value="4" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Agree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q2" value="5" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Strongly Agree</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question-group" data-dimension="volatility">
+                                <p class="text-gray-900 font-medium mb-3">I make decisions quickly even when information is incomplete.</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q3" value="1" class="sr-only peer" required>
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Strongly Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q3" value="2" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q3" value="3" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Neutral</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q3" value="4" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Agree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q3" value="5" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:border-emerald-600 hover:bg-gray-50">Strongly Agree</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Uncertainty Questions -->
+                    <div class="border-b border-gray-200 pb-8">
+                        <h3 class="text-2xl font-bold text-blue-600 mb-6">Uncertainty</h3>
+                        <div class="space-y-6">
+                            <div class="question-group" data-dimension="uncertainty">
+                                <p class="text-gray-900 font-medium mb-3">I actively seek diverse perspectives and information before making important decisions.</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q4" value="1" class="sr-only peer" required>
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Strongly Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q4" value="2" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q4" value="3" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Neutral</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q4" value="4" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Agree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q4" value="5" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Strongly Agree</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question-group" data-dimension="uncertainty">
+                                <p class="text-gray-900 font-medium mb-3">I invest time in learning and building understanding of complex situations.</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q5" value="1" class="sr-only peer" required>
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Strongly Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q5" value="2" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q5" value="3" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Neutral</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q5" value="4" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Agree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q5" value="5" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Strongly Agree</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question-group" data-dimension="uncertainty">
+                                <p class="text-gray-900 font-medium mb-3">I acknowledge uncertainty openly and help my team navigate it effectively.</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q6" value="1" class="sr-only peer" required>
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Strongly Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q6" value="2" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q6" value="3" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Neutral</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q6" value="4" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Agree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q6" value="5" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-blue-600 peer-checked:text-white peer-checked:border-blue-600 hover:bg-gray-50">Strongly Agree</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Complexity Questions -->
+                    <div class="border-b border-gray-200 pb-8">
+                        <h3 class="text-2xl font-bold text-purple-600 mb-6">Complexity</h3>
+                        <div class="space-y-6">
+                            <div class="question-group" data-dimension="complexity">
+                                <p class="text-gray-900 font-medium mb-3">I simplify complex information to help my team understand and act effectively.</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q7" value="1" class="sr-only peer" required>
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Strongly Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q7" value="2" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q7" value="3" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Neutral</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q7" value="4" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Agree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q7" value="5" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Strongly Agree</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question-group" data-dimension="complexity">
+                                <p class="text-gray-900 font-medium mb-3">I consider how different parts of the system interact when making decisions.</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q8" value="1" class="sr-only peer" required>
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Strongly Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q8" value="2" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q8" value="3" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Neutral</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q8" value="4" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Agree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q8" value="5" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Strongly Agree</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question-group" data-dimension="complexity">
+                                <p class="text-gray-900 font-medium mb-3">I build cross-functional teams to address complex challenges.</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q9" value="1" class="sr-only peer" required>
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Strongly Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q9" value="2" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q9" value="3" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Neutral</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q9" value="4" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Agree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q9" value="5" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-purple-600 peer-checked:text-white peer-checked:border-purple-600 hover:bg-gray-50">Strongly Agree</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ambiguity Questions -->
+                    <div class="pb-8">
+                        <h3 class="text-2xl font-bold text-amber-600 mb-6">Ambiguity</h3>
+                        <div class="space-y-6">
+                            <div class="question-group" data-dimension="ambiguity">
+                                <p class="text-gray-900 font-medium mb-3">I experiment with different approaches when the best path forward is unclear.</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q10" value="1" class="sr-only peer" required>
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Strongly Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q10" value="2" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q10" value="3" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Neutral</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q10" value="4" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Agree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q10" value="5" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Strongly Agree</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question-group" data-dimension="ambiguity">
+                                <p class="text-gray-900 font-medium mb-3">I maintain flexibility in my plans and can pivot when needed.</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q11" value="1" class="sr-only peer" required>
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Strongly Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q11" value="2" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q11" value="3" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Neutral</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q11" value="4" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Agree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q11" value="5" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Strongly Agree</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question-group" data-dimension="ambiguity">
+                                <p class="text-gray-900 font-medium mb-3">I learn from failures and use them to improve future decisions.</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q12" value="1" class="sr-only peer" required>
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Strongly Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q12" value="2" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Disagree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q12" value="3" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Neutral</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q12" value="4" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Agree</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="radio" name="q12" value="5" class="sr-only peer">
+                                        <span class="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-700 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:border-amber-600 hover:bg-gray-50">Strongly Agree</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <button type="submit" class="w-full md:w-auto px-8 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+                            Generate Report
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Results Report -->
+            <div id="results-report" class="hidden mt-12 bg-white border border-gray-200 rounded-3xl p-8">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Your VUCA Leadership Assessment Report</h2>
+                    <p class="text-gray-700">Review your scores and recommendations for each VUCA dimension.</p>
+                </div>
+
+                <!-- Overall Score -->
+                <div class="mb-8 bg-gradient-to-br from-emerald-50 to-white border border-emerald-200 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Overall VUCA Adaptability Score</h3>
+                    <div class="flex items-center gap-6">
+                        <div class="flex-shrink-0">
+                            <div id="overall-score" class="text-6xl font-bold text-emerald-600">0</div>
+                            <div class="text-sm text-gray-600 mt-1">out of 100</div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                                <div id="overall-progress" class="bg-emerald-600 h-4 rounded-full transition-all duration-500" style="width: 0%"></div>
+                            </div>
+                            <p id="overall-interpretation" class="text-gray-700"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dimension Scores -->
+                <div class="space-y-6 mb-8">
+                    <!-- Volatility -->
+                    <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-emerald-600">Volatility</h3>
+                            <div class="text-right">
+                                <div id="volatility-score" class="text-3xl font-bold text-emerald-600">0</div>
+                                <div class="text-sm text-gray-600">out of 15</div>
+                            </div>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
+                            <div id="volatility-progress" class="bg-emerald-600 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <div id="volatility-feedback" class="text-gray-700"></div>
+                    </div>
+
+                    <!-- Uncertainty -->
+                    <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-blue-600">Uncertainty</h3>
+                            <div class="text-right">
+                                <div id="uncertainty-score" class="text-3xl font-bold text-blue-600">0</div>
+                                <div class="text-sm text-gray-600">out of 15</div>
+                            </div>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
+                            <div id="uncertainty-progress" class="bg-blue-600 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <div id="uncertainty-feedback" class="text-gray-700"></div>
+                    </div>
+
+                    <!-- Complexity -->
+                    <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-purple-600">Complexity</h3>
+                            <div class="text-right">
+                                <div id="complexity-score" class="text-3xl font-bold text-purple-600">0</div>
+                                <div class="text-sm text-gray-600">out of 15</div>
+                            </div>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
+                            <div id="complexity-progress" class="bg-purple-600 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <div id="complexity-feedback" class="text-gray-700"></div>
+                    </div>
+
+                    <!-- Ambiguity -->
+                    <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-amber-600">Ambiguity</h3>
+                            <div class="text-right">
+                                <div id="ambiguity-score" class="text-3xl font-bold text-amber-600">0</div>
+                                <div class="text-sm text-gray-600">out of 15</div>
+                            </div>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
+                            <div id="ambiguity-progress" class="bg-amber-600 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <div id="ambiguity-feedback" class="text-gray-700"></div>
+                    </div>
+                </div>
+
+                <!-- Recommendations -->
+                <div class="bg-gray-50 border border-gray-200 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Development Recommendations</h3>
+                    <div id="recommendations" class="space-y-4"></div>
+                </div>
+
+                <!-- Action Items -->
+                <div class="mt-8 bg-white border border-gray-200 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Next Steps</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <a href="leadership.html" class="block p-6 bg-emerald-50 border border-emerald-200 rounded-xl hover:bg-emerald-100 transition">
+                            <h4 class="font-bold text-gray-900 mb-2">Explore Leadership Strategies</h4>
+                            <p class="text-sm text-gray-700">Learn proven approaches for VUCA leadership</p>
+                        </a>
+                        <a href="framework.html" class="block p-6 bg-blue-50 border border-blue-200 rounded-xl hover:bg-blue-100 transition">
+                            <h4 class="font-bold text-gray-900 mb-2">Deep Dive into VUCA Framework</h4>
+                            <p class="text-sm text-gray-700">Understand each dimension in detail</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <button onclick="resetAssessment()" class="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50">
+                        Retake Assessment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">VUCA</h3>
+                    <p class="text-sm text-gray-400">Your comprehensive resource for understanding and navigating the VUCA world.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">Learn</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white">What is VUCA</a></li>
+                        <li><a href="framework.html" class="hover:text-white">VUCA Framework</a></li>
+                        <li><a href="examples.html" class="hover:text-white">Real Examples</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">Practice</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="action-guide.html" class="hover:text-white">Action Guide</a></li>
+                        <li><a href="leadership.html" class="hover:text-white">Leadership Strategies</a></li>
+                        <li><a href="assessment.html" class="hover:text-white">Self Assessment</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="resources.html" class="hover:text-white">Books & Articles</a></li>
+                        <li><a href="resources.html#tools" class="hover:text-white">Tools & Templates</a></li>
+                        <li><a href="resources.html#case-studies" class="hover:text-white">Case Studies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-sm text-center text-gray-400">
+                <p>2026 VUCA. Professional resource for VUCA education and leadership development.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Question mapping to dimensions
+        const questionMapping = {
+            q1: 'volatility',
+            q2: 'volatility',
+            q3: 'volatility',
+            q4: 'uncertainty',
+            q5: 'uncertainty',
+            q6: 'uncertainty',
+            q7: 'complexity',
+            q8: 'complexity',
+            q9: 'complexity',
+            q10: 'ambiguity',
+            q11: 'ambiguity',
+            q12: 'ambiguity'
+        };
+
+        // Feedback messages
+        const feedbackMessages = {
+            volatility: {
+                high: 'You demonstrate strong adaptability to volatile environments. You maintain vision and make quick decisions effectively.',
+                medium: 'You show moderate adaptability to volatility. Consider developing faster decision-making processes and clearer vision communication.',
+                low: 'Volatility may challenge your leadership style. Focus on building agility, developing a clear vision, and practicing rapid decision-making.'
+            },
+            uncertainty: {
+                high: 'You excel at navigating uncertainty. You gather diverse perspectives and build understanding effectively.',
+                medium: 'You handle uncertainty reasonably well. Consider investing more in learning, seeking diverse perspectives, and acknowledging uncertainty openly.',
+                low: 'Uncertainty may be difficult for you. Focus on building information networks, learning continuously, and becoming comfortable with incomplete information.'
+            },
+            complexity: {
+                high: 'You manage complexity well. You simplify effectively and consider system interactions.',
+                medium: 'You handle complexity adequately. Consider improving your systems thinking and simplification skills.',
+                low: 'Complexity may overwhelm you. Focus on developing systems thinking, building cross-functional teams, and improving your ability to simplify complex information.'
+            },
+            ambiguity: {
+                high: 'You thrive in ambiguous situations. You experiment effectively and learn from failures.',
+                medium: 'You manage ambiguity reasonably well. Consider increasing experimentation, maintaining flexibility, and learning from failures more systematically.',
+                low: 'Ambiguity may be challenging for you. Focus on developing comfort with experimentation, building flexibility into plans, and creating learning cultures.'
+            }
+        };
+
+        // Recommendations based on scores
+        function getRecommendations(scores) {
+            const recommendations = [];
+            
+            if (scores.volatility < 10) {
+                recommendations.push({
+                    dimension: 'Volatility',
+                    color: 'emerald',
+                    items: [
+                        'Develop a clear, compelling vision that provides direction during rapid changes',
+                        'Practice making decisions with 70-80% information rather than waiting for complete data',
+                        'Build scenario planning capabilities to prepare for multiple outcomes',
+                        'Create faster feedback loops to respond to changes quickly'
+                    ]
+                });
+            }
+
+            if (scores.uncertainty < 10) {
+                recommendations.push({
+                    dimension: 'Uncertainty',
+                    color: 'blue',
+                    items: [
+                        'Invest in building diverse information networks and learning systems',
+                        'Practice acknowledging uncertainty openly with your team',
+                        'Develop comfort with probabilistic thinking and multiple scenarios',
+                        'Create partnerships with experts and industry networks'
+                    ]
+                });
+            }
+
+            if (scores.complexity < 10) {
+                recommendations.push({
+                    dimension: 'Complexity',
+                    color: 'purple',
+                    items: [
+                        'Develop systems thinking skills to understand interconnections',
+                        'Practice simplifying complex information for your team',
+                        'Build cross-functional teams with diverse expertise',
+                        'Use visual frameworks and mapping tools to clarify complexity'
+                    ]
+                });
+            }
+
+            if (scores.ambiguity < 10) {
+                recommendations.push({
+                    dimension: 'Ambiguity',
+                    color: 'amber',
+                    items: [
+                        'Increase experimentation and rapid prototyping in your work',
+                        'Build flexibility into plans and be ready to pivot',
+                        'Create a culture that learns from failures productively',
+                        'Practice making decisions when multiple interpretations are valid'
+                    ]
+                });
+            }
+
+            return recommendations;
+        }
+
+        // Calculate scores
+        function calculateScores(formData) {
+            const scores = {
+                volatility: 0,
+                uncertainty: 0,
+                complexity: 0,
+                ambiguity: 0
+            };
+
+            Object.keys(questionMapping).forEach(question => {
+                const dimension = questionMapping[question];
+                const value = parseInt(formData.get(question));
+                scores[dimension] += value;
+            });
+
+            return scores;
+        }
+
+        // Get feedback level
+        function getFeedbackLevel(score) {
+            if (score >= 12) return 'high';
+            if (score >= 8) return 'medium';
+            return 'low';
+        }
+
+        // Display results
+        function displayResults(scores) {
+            const form = document.getElementById('assessment-form');
+            const report = document.getElementById('results-report');
+            
+            form.classList.add('hidden');
+            report.classList.remove('hidden');
+            report.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Calculate overall score
+            const totalScore = scores.volatility + scores.uncertainty + scores.complexity + scores.ambiguity;
+            const overallPercentage = Math.round((totalScore / 60) * 100);
+
+            // Update overall score
+            document.getElementById('overall-score').textContent = overallPercentage;
+            document.getElementById('overall-progress').style.width = overallPercentage + '%';
+            
+            let overallInterpretation = '';
+            if (overallPercentage >= 80) {
+                overallInterpretation = 'Excellent. You demonstrate strong VUCA leadership capabilities across all dimensions.';
+            } else if (overallPercentage >= 60) {
+                overallInterpretation = 'Good. You have solid VUCA leadership foundations with room for targeted development.';
+            } else if (overallPercentage >= 40) {
+                overallInterpretation = 'Developing. You show potential but need focused development in several VUCA dimensions.';
+            } else {
+                overallInterpretation = 'Needs Development. Significant growth opportunities exist across multiple VUCA dimensions.';
+            }
+            document.getElementById('overall-interpretation').textContent = overallInterpretation;
+
+            // Update dimension scores
+            const dimensions = ['volatility', 'uncertainty', 'complexity', 'ambiguity'];
+            const colors = {
+                volatility: 'emerald',
+                uncertainty: 'blue',
+                complexity: 'purple',
+                ambiguity: 'amber'
+            };
+
+            dimensions.forEach(dimension => {
+                const score = scores[dimension];
+                const percentage = Math.round((score / 15) * 100);
+                const level = getFeedbackLevel(score);
+                const feedback = feedbackMessages[dimension][level];
+
+                document.getElementById(`${dimension}-score`).textContent = score;
+                document.getElementById(`${dimension}-progress`).style.width = percentage + '%';
+                document.getElementById(`${dimension}-feedback`).textContent = feedback;
+            });
+
+            // Display recommendations
+            const recommendations = getRecommendations(scores);
+            const recommendationsContainer = document.getElementById('recommendations');
+            recommendationsContainer.innerHTML = '';
+
+            if (recommendations.length === 0) {
+                recommendationsContainer.innerHTML = '<p class="text-gray-700">Congratulations! Your scores indicate strong VUCA leadership capabilities. Continue developing and refining your skills.</p>';
+            } else {
+                recommendations.forEach(rec => {
+                    const recDiv = document.createElement('div');
+                    let colorClass = '';
+                    let borderClass = '';
+                    let dotClass = '';
+                    
+                    if (rec.color === 'emerald') {
+                        colorClass = 'bg-emerald-50';
+                        borderClass = 'border-emerald-200';
+                        dotClass = 'bg-emerald-500';
+                    } else if (rec.color === 'blue') {
+                        colorClass = 'bg-blue-50';
+                        borderClass = 'border-blue-200';
+                        dotClass = 'bg-blue-500';
+                    } else if (rec.color === 'purple') {
+                        colorClass = 'bg-purple-50';
+                        borderClass = 'border-purple-200';
+                        dotClass = 'bg-purple-500';
+                    } else if (rec.color === 'amber') {
+                        colorClass = 'bg-amber-50';
+                        borderClass = 'border-amber-200';
+                        dotClass = 'bg-amber-500';
+                    }
+                    
+                    recDiv.className = `${colorClass} border ${borderClass} rounded-xl p-6`;
+                    recDiv.innerHTML = `
+                        <h4 class="font-bold text-gray-900 mb-3">${rec.dimension} Development</h4>
+                        <ul class="space-y-2">
+                            ${rec.items.map(item => `<li class="text-sm text-gray-700 flex items-start">
+                                <span class="mr-2 mt-1 w-1.5 h-1.5 ${dotClass} rounded-full flex-shrink-0"></span>
+                                <span>${item}</span>
+                            </li>`).join('')}
+                        </ul>
+                    `;
+                    recommendationsContainer.appendChild(recDiv);
+                });
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('vuca-assessment').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const scores = calculateScores(formData);
+            displayResults(scores);
+        });
+
+        // Reset assessment
+        function resetAssessment() {
+            document.getElementById('vuca-assessment').reset();
+            document.getElementById('assessment-form').classList.remove('hidden');
+            document.getElementById('results-report').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
