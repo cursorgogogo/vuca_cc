@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUCA 框架：完整分析与实施指南</title>
+    <meta name="description" content="VUCA 框架深度指南。学习如何在组织中分析、应对并驾驭易变性、不确定性、复杂性和模糊性。">
+    <link rel="canonical" href="https://vuca.cc/zh/framework.html">
+    <link rel="icon" type="image/svg+xml" href="../V.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900">
+    
+        <!-- Navigation -->
+    <nav class="border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/zh/" class="text-2xl font-bold text-emerald-600">VUCA</a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="/zh/" class="text-gray-700 hover:text-emerald-600">首页</a>
+                    <a href="framework.html" class="text-gray-900 hover:text-emerald-600 font-medium">框架</a>
+                    <a href="leadership.html" class="text-gray-700 hover:text-emerald-600">领导力</a>
+                    <a href="action-guide.html" class="text-gray-700 hover:text-emerald-600">行动指南</a>
+                    <a href="examples.html" class="text-gray-700 hover:text-emerald-600">案例</a>
+                    <a href="resources.html" class="text-gray-700 hover:text-emerald-600">资源</a>
+                    <a href="assessment.html" class="text-gray-700 hover:text-emerald-600">评估</a>
+                    <div class="relative ml-4">
+                        <button id="lang-button" class="flex items-center text-gray-700 hover:text-emerald-600 focus:outline-none">
+                            <span class="text-sm font-medium">中文</span>
+                            <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="lang-menu" class="hidden absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
+                            <a id="lang-link-en" href="../framework.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">English</a>
+                            <a id="lang-link-ja" href="../ja/framework.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">日本語</a>
+                            <a id="lang-link-de" href="../de/framework.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Deutsch</a>
+                            <a id="lang-link-zh" href="framework.html" class="block px-4 py-2 text-sm text-gray-900 bg-emerald-50 font-medium">中文</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-emerald-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/zh/" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">首页</a>
+                <a href="framework.html" class="block px-3 py-2 rounded-md text-gray-900 font-medium bg-emerald-50">框架</a>
+                <a href="leadership.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">领导力</a>
+                <a href="action-guide.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">行动指南</a>
+                <a href="examples.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">案例</a>
+                <a href="resources.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">资源</a>
+                <a href="assessment.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">评估</a>
+                <div class="border-t border-gray-200 mt-2 pt-2">
+                    <div class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">语言</div>
+                    <a id="lang-link-en-mobile" href="../framework.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">English</a>
+                    <a id="lang-link-ja-mobile" href="../ja/framework.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">日本語</a>
+                    <a id="lang-link-de-mobile" href="../de/framework.html" class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600">Deutsch</a>
+                    <a id="lang-link-zh-mobile" href="framework.html" class="block px-3 py-2 rounded-md text-gray-900 font-medium bg-emerald-50">中文</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const langButton = document.getElementById('lang-button');
+        const langMenu = document.getElementById('lang-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        if (langButton && langMenu) {
+            langButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langMenu.classList.toggle('hidden');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
+                    langMenu.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-emerald-50 to-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl font-bold text-gray-900 mb-6">VUCA 框架深度解析</h1>
+            <p class="text-xl text-gray-700 max-w-3xl">通过实用分析工具、战略应对模型及各维度实施策略，全面掌握 VUCA 框架。</p>
+        </div>
+    </section>
+
+    <!-- 框架 Analysis Matrix -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">VUCA 分析矩阵</h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-gray-50">
+                            <th class="border border-gray-200 px-6 py-4 text-left font-bold text-gray-900">方面</th>
+                            <th class="border border-gray-200 px-6 py-4 text-left font-bold text-gray-900">定义</th>
+                            <th class="border border-gray-200 px-6 py-4 text-left font-bold text-gray-900">关键指标</th>
+                            <th class="border border-gray-200 px-6 py-4 text-left font-bold text-gray-900">回复</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white">
+                            <td class="border border-gray-200 px-6 py-4 font-bold text-emerald-600">易变性</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">变化的速度和幅度</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">市场快速波动</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">建立敏捷性和响应能力</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="border border-gray-200 px-6 py-4 font-bold text-blue-600">不确定性</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">缺乏可预测性</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">预测不可靠</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">收集信息和见解</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="border border-gray-200 px-6 py-4 font-bold text-purple-600">复杂性</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">多个相互关联的因素</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">系统依赖性</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">重组和澄清</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="border border-gray-200 px-6 py-4 font-bold text-amber-600">模糊性</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">因果关系不明确</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">多种解读</td>
+                            <td class="border border-gray-200 px-6 py-4 text-sm text-gray-700">实验和测试假设</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Analysis -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">框架详细分析</h2>
+            
+            <!-- 易变性 -->
+            <div class="mb-16 bg-white rounded-3xl p-8 border border-gray-200">
+                <h3 class="text-3xl font-bold text-emerald-600 mb-6">易变性分析</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">特征</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-emerald-500 rounded-full flex-shrink-0"></span>
+                                <span>变化频繁且剧烈</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-emerald-500 rounded-full flex-shrink-0"></span>
+                                <span>变化的性质是已知的，但时间是不可预测的</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-emerald-500 rounded-full flex-shrink-0"></span>
+                                <span>市场、价格和需求大幅波动</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-emerald-500 rounded-full flex-shrink-0"></span>
+                                <span>技术颠覆迅速发生</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">战略回应</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                                <p class="font-bold text-gray-900 mb-2">建立储备</p>
+                                <p class="text-sm text-gray-700">维持金融缓冲、过剩产能和战略储备以吸收冲击</p>
+                            </div>
+                            <div class="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                                <p class="font-bold text-gray-900 mb-2">提高速度</p>
+                                <p class="text-sm text-gray-700">加快决策过程并减少官僚主义</p>
+                            </div>
+                            <div class="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                                <p class="font-bold text-gray-900 mb-2">场景规划</p>
+                                <p class="text-sm text-gray-700">针对不同结果制定多种情景和应急计划</p>
+                            </div>
+                            <div class="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                                <p class="font-bold text-gray-900 mb-2">实时监控</p>
+                                <p class="text-sm text-gray-700">实施持续环境扫描和预警系统</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">工具和方法</h4>
+                        <div class="bg-gray-50 rounded-xl p-6">
+                            <ul class="space-y-2 text-gray-700">
+                                <li>市场波动指数及趋势分析</li>
+                                <li>实时仪表板和 KPI 监控</li>
+                                <li>敏捷方法论和冲刺计划</li>
+                                <li>快速原型设计和迭代开发</li>
+                                <li>动态资源分配系统</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 不确定性 -->
+            <div class="mb-16 bg-white rounded-3xl p-8 border border-gray-200">
+                <h3 class="text-3xl font-bold text-blue-600 mb-6">不确定性分析</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">特征</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span>
+                                <span>结果的可预测性有限</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span>
+                                <span>历史数据可能无法表明未来的模式</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span>
+                                <span>因果关系尚不清楚</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0"></span>
+                                <span>信息差距阻碍了自信的预测</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">战略回应</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                                <p class="font-bold text-gray-900 mb-2">收集情报</p>
+                                <p class="text-sm text-gray-700">投资于研究、客户洞察和竞争情报</p>
+                            </div>
+                            <div class="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                                <p class="font-bold text-gray-900 mb-2">信息多元化</p>
+                                <p class="text-sm text-gray-700">寻求多种视角和多样化的数据源</p>
+                            </div>
+                            <div class="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                                <p class="font-bold text-gray-900 mb-2">建立伙伴关系</p>
+                                <p class="text-sm text-gray-700">与专家和行业网络合作</p>
+                            </div>
+                            <div class="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                                <p class="font-bold text-gray-900 mb-2">灵活规划</p>
+                                <p class="text-sm text-gray-700">创建可随着信息出现进行调整的适应性计划</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">工具和方法</h4>
+                        <div class="bg-gray-50 rounded-xl p-6">
+                            <ul class="space-y-2 text-gray-700">
+                                <li>概率预测和蒙特卡罗模拟</li>
+                                <li>客户研究和人种学研究</li>
+                                <li>专家小组和德尔菲技术</li>
+                                <li>试点计划和小规模测试</li>
+                                <li>基于期权的规划和分阶段投资</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 复杂性 -->
+            <div class="mb-16 bg-white rounded-3xl p-8 border border-gray-200">
+                <h3 class="text-3xl font-bold text-purple-600 mb-6">复杂性分析</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">特征</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-purple-500 rounded-full flex-shrink-0"></span>
+                                <span>多个相互关联的部分和变量</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-purple-500 rounded-full flex-shrink-0"></span>
+                                <span>系统级交互创造紧急行为</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-purple-500 rounded-full flex-shrink-0"></span>
+                                <span>很难孤立个体因素</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-purple-500 rounded-full flex-shrink-0"></span>
+                                <span>线性思维无法捕捉全貌</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">战略回应</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
+                                <p class="font-bold text-gray-900 mb-2">简化结构</p>
+                                <p class="text-sm text-gray-700">将复杂的问题分解为可管理的组件</p>
+                            </div>
+                            <div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
+                                <p class="font-bold text-gray-900 mb-2">系统思维</p>
+                                <p class="text-sm text-gray-700">映射系统中的关系和反馈循环</p>
+                            </div>
+                            <div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
+                                <p class="font-bold text-gray-900 mb-2">专家团队</p>
+                                <p class="text-sm text-gray-700">组建具有不同专业知识的跨职能团队</p>
+                            </div>
+                            <div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
+                                <p class="font-bold text-gray-900 mb-2">清晰的沟通</p>
+                                <p class="text-sm text-gray-700">建立共享语言和视觉框架</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">工具和方法</h4>
+                        <div class="bg-gray-50 rounded-xl p-6">
+                            <ul class="space-y-2 text-gray-700">
+                                <li>系统映射和因果循环图</li>
+                                <li>利益相关者分析和网络映射</li>
+                                <li>设计思维和共同创造研讨会</li>
+                                <li>模块化设计和微服务架构</li>
+                                <li>跨职能协作平台</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模糊性 -->
+            <div class="bg-white rounded-3xl p-8 border border-gray-200">
+                <h3 class="text-3xl font-bold text-amber-600 mb-6">歧义分析</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">特征</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-amber-500 rounded-full flex-shrink-0"></span>
+                                <span>事件和情况的含义不清楚</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-amber-500 rounded-full flex-shrink-0"></span>
+                                <span>存在多种有效的解释</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-amber-500 rounded-full flex-shrink-0"></span>
+                                <span>目前的情况缺乏先例</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 mt-1 w-1.5 h-1.5 bg-amber-500 rounded-full flex-shrink-0"></span>
+                                <span>很难确定正确的行动方针</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">战略回应</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+                                <p class="font-bold text-gray-900 mb-2">快速实验</p>
+                                <p class="text-sm text-gray-700">通过快速实验检验多个假设</p>
+                            </div>
+                            <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+                                <p class="font-bold text-gray-900 mb-2">创造清晰度</p>
+                                <p class="text-sm text-gray-700">定义指导决策的原则和框架</p>
+                            </div>
+                            <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+                                <p class="font-bold text-gray-900 mb-2">拥抱悖论</p>
+                                <p class="text-sm text-gray-700">接受多种真理可以共存</p>
+                            </div>
+                            <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+                                <p class="font-bold text-gray-900 mb-2">不断学习</p>
+                                <p class="text-sm text-gray-700">将组织学习融入每项举措中</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">工具和方法</h4>
+                        <div class="bg-gray-50 rounded-xl p-6">
+                            <ul class="space-y-2 text-gray-700">
+                                <li>精益创业方法论和 MVP 开发</li>
+                                <li>A/B 测试和对照实验</li>
+                                <li>创新实验室和沙箱环境</li>
+                                <li>行动后审查和回顾</li>
+                                <li>决策日志和反思实践</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation 框架 -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">VUCA 实施框架</h2>
+            <p class="text-lg text-gray-700 mb-12">在组织中应用 VUCA 分析的结构化方法。</p>
+            
+            <div class="space-y-6">
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">评估您的环境</h3>
+                            <p class="text-gray-700 mb-4">评估哪些 VUCA 维度在您的行业、市场或组织中最普遍。不同行业面临不同的 VUCA 因素组合。</p>
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <p class="text-sm font-medium text-gray-900 mb-2">关键问题：</p>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>市场状况变化有多快？</li>
+                                    <li>客户行为的可预测性如何？</li>
+                                    <li>有多少变量影响我们的成功？</li>
+                                    <li>因果关系有多清晰？</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">优先响应</h3>
+                            <p class="text-gray-700 mb-4">将资源集中在影响您组织的最关键的 VUCA 维度上。并非所有组织都需要同等关注所有四个维度。</p>
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <p class="text-sm font-medium text-gray-900 mb-2">响应优先级矩阵：</p>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>高波动性：建立敏捷性和储备</li>
+                                    <li>高不确定性：投资情报</li>
+                                    <li>高复杂性：简化和澄清</li>
+                                    <li>高模糊性：实验和学习</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">建设能力</h3>
+                            <p class="text-gray-700 mb-4">培养与您的 VUCA 概况相符的组织能力。这包括人员、流程、系统和文化。</p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <p class="text-sm font-bold text-gray-900 mb-2">人员能力</p>
+                                    <p class="text-sm text-gray-700">培训、技能发展、思维转变</p>
+                                </div>
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <p class="text-sm font-bold text-gray-900 mb-2">工艺能力</p>
+                                    <p class="text-sm text-gray-700">敏捷方法、决策框架</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="bg-emerald-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">4</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">监控和适应</h3>
+                            <p class="text-gray-700 mb-4">持续评估您的 VUCA 环境并调整策略。 VUCA 因素的性质和强度随时间而变化。</p>
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <p class="text-sm font-medium text-gray-900 mb-2">监控方式：</p>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>每季度环境扫描</li>
+                                    <li>定期利益相关者反馈</li>
+                                    <li>战略回顾和支点</li>
+                                    <li>持续学习整合</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-emerald-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">将 VUCA 框架应用于您的领导力</h2>
+            <p class="text-xl text-emerald-50 mb-8">探索驾驭 VUCA 环境的实用领导策略。</p>
+            <a href="leadership.html" class="inline-block px-8 py-3 bg-white text-emerald-600 rounded-lg font-medium hover:bg-emerald-50">探索领导力指南</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">VUCA</h3>
+                    <p class="text-sm text-gray-400">理解并驾驭 VUCA 世界的综合资源。</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">学习</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/zh/" class="hover:text-white">什么是VUCA</a></li>
+                        <li><a href="framework.html" class="hover:text-white">VUCA框架</a></li>
+                        <li><a href="examples.html" class="hover:text-white">真实例子</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">领导力</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="leadership.html" class="hover:text-white">VUCA领导力</a></li>
+                        <li><a href="leadership.html#skills" class="hover:text-white">关键技能</a></li>
+                        <li><a href="leadership.html#training" class="hover:text-white">培训项目</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-medium mb-4">资源</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="resources.html" class="hover:text-white">书籍和文章</a></li>
+                        <li><a href="resources.html#tools" class="hover:text-white">工具和模板</a></li>
+                        <li><a href="resources.html#case-studies" class="hover:text-white">案例研究</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-sm text-center text-gray-400">
+                <p>2025 VUCA. VUCA 教育与领导力发展的专业资源。</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        (function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const langLinkEn = document.getElementById('lang-link-en');
+            const langLinkJa = document.getElementById('lang-link-ja');
+            const langLinkDe = document.getElementById('lang-link-de');
+            const langLinkZh = document.getElementById('lang-link-zh');
+            const langLinkEnMobile = document.getElementById('lang-link-en-mobile');
+            const langLinkJaMobile = document.getElementById('lang-link-ja-mobile');
+            const langLinkDeMobile = document.getElementById('lang-link-de-mobile');
+            const langLinkZhMobile = document.getElementById('lang-link-zh-mobile');
+
+            if (currentPage === 'index.html') {
+                if (langLinkEn) langLinkEn.href = '/';
+                if (langLinkJa) langLinkJa.href = '/ja/';
+                if (langLinkDe) langLinkDe.href = '/de/';
+                if (langLinkZh) langLinkZh.href = '/zh/';
+                if (langLinkEnMobile) langLinkEnMobile.href = '/';
+                if (langLinkJaMobile) langLinkJaMobile.href = '/ja/';
+                if (langLinkDeMobile) langLinkDeMobile.href = '/de/';
+                if (langLinkZhMobile) langLinkZhMobile.href = '/zh/';
+            } else {
+                if (langLinkEn) langLinkEn.href = '../' + currentPage;
+                if (langLinkJa) langLinkJa.href = '../ja/' + currentPage;
+                if (langLinkDe) langLinkDe.href = '../de/' + currentPage;
+                if (langLinkZh) langLinkZh.href = currentPage;
+                if (langLinkEnMobile) langLinkEnMobile.href = '../' + currentPage;
+                if (langLinkJaMobile) langLinkJaMobile.href = '../ja/' + currentPage;
+                if (langLinkDeMobile) langLinkDeMobile.href = '../de/' + currentPage;
+                if (langLinkZhMobile) langLinkZhMobile.href = currentPage;
+            }
+        })();
+    </script>
+</body>
+</html>
