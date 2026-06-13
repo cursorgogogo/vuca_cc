@@ -87,7 +87,7 @@
 
         if (langButton && langMenu) {
             langButton.addEventListener('click', (e) => {
-                <!-- e.stopPropagation(); -->
+                e.stopPropagation();
                 langMenu.classList.toggle('hidden');
             });
 
@@ -97,6 +97,37 @@
                 }
             });
         }
+(function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const langLinkEn = document.getElementById('lang-link-en');
+            const langLinkJa = document.getElementById('lang-link-ja');
+            const langLinkDe = document.getElementById('lang-link-de');
+            const langLinkZh = document.getElementById('lang-link-zh');
+            const langLinkEnMobile = document.getElementById('lang-link-en-mobile');
+            const langLinkJaMobile = document.getElementById('lang-link-ja-mobile');
+            const langLinkDeMobile = document.getElementById('lang-link-de-mobile');
+            const langLinkZhMobile = document.getElementById('lang-link-zh-mobile');
+
+            if (currentPage === 'index.html') {
+                if (langLinkEn) langLinkEn.href = '/';
+                if (langLinkJa) langLinkJa.href = '/ja/';
+                if (langLinkDe) langLinkDe.href = '/de/';
+                if (langLinkZh) langLinkZh.href = '/zh/';
+                if (langLinkEnMobile) langLinkEnMobile.href = '/';
+                if (langLinkJaMobile) langLinkJaMobile.href = '/ja/';
+                if (langLinkDeMobile) langLinkDeMobile.href = '/de/';
+                if (langLinkZhMobile) langLinkZhMobile.href = '/zh/';
+            } else {
+                if (langLinkEn) langLinkEn.href = '../' + currentPage;
+                if (langLinkJa) langLinkJa.href = '../ja/' + currentPage;
+                if (langLinkDe) langLinkDe.href = currentPage;
+                if (langLinkZh) langLinkZh.href = '../zh/' + currentPage;
+                if (langLinkEnMobile) langLinkEnMobile.href = '../' + currentPage;
+                if (langLinkJaMobile) langLinkJaMobile.href = '../ja/' + currentPage;
+                if (langLinkDeMobile) langLinkDeMobile.href = currentPage;
+                if (langLinkZhMobile) langLinkZhMobile.href = '../zh/' + currentPage;
+            }
+        })();
     </script>
     <!-- Hero Section -->
     <section class="py-20 bg-gradient-to-br from-emerald-50 to-white">

@@ -436,7 +436,7 @@
 
 
     <script>
-        (function() {
+(function() {
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             const langLinkEn = document.getElementById('lang-link-en');
             const langLinkJa = document.getElementById('lang-link-ja');
@@ -447,14 +447,25 @@
             const langLinkDeMobile = document.getElementById('lang-link-de-mobile');
             const langLinkZhMobile = document.getElementById('lang-link-zh-mobile');
 
-            if (langLinkEn) langLinkEn.href = '../' + currentPage;
-            if (langLinkJa) langLinkJa.href = currentPage;
-            if (langLinkDe) langLinkDe.href = '../de/' + currentPage;
-            if (langLinkZh) langLinkZh.href = '../zh/' + currentPage;
-            if (langLinkEnMobile) langLinkEnMobile.href = '../' + currentPage;
-            if (langLinkJaMobile) langLinkJaMobile.href = currentPage;
-            if (langLinkDeMobile) langLinkDeMobile.href = '../de/' + currentPage;
-            if (langLinkZhMobile) langLinkZhMobile.href = '../zh/' + currentPage;
+            if (currentPage === 'index.html') {
+                if (langLinkEn) langLinkEn.href = '/';
+                if (langLinkJa) langLinkJa.href = '/ja/';
+                if (langLinkDe) langLinkDe.href = '/de/';
+                if (langLinkZh) langLinkZh.href = '/zh/';
+                if (langLinkEnMobile) langLinkEnMobile.href = '/';
+                if (langLinkJaMobile) langLinkJaMobile.href = '/ja/';
+                if (langLinkDeMobile) langLinkDeMobile.href = '/de/';
+                if (langLinkZhMobile) langLinkZhMobile.href = '/zh/';
+            } else {
+                if (langLinkEn) langLinkEn.href = '../' + currentPage;
+                if (langLinkJa) langLinkJa.href = currentPage;
+                if (langLinkDe) langLinkDe.href = '../de/' + currentPage;
+                if (langLinkZh) langLinkZh.href = '../zh/' + currentPage;
+                if (langLinkEnMobile) langLinkEnMobile.href = '../' + currentPage;
+                if (langLinkJaMobile) langLinkJaMobile.href = currentPage;
+                if (langLinkDeMobile) langLinkDeMobile.href = '../de/' + currentPage;
+                if (langLinkZhMobile) langLinkZhMobile.href = '../zh/' + currentPage;
+            }
         })();
     </script>
 </body>

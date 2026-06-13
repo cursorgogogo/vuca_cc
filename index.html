@@ -1105,7 +1105,7 @@
         });
 
         // Auto-update language switcher links based on current page
-        (function() {
+(function() {
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             const langLinkEn = document.getElementById('lang-link-en');
             const langLinkJa = document.getElementById('lang-link-ja');
@@ -1116,10 +1116,10 @@
             const langLinkDeMobile = document.getElementById('lang-link-de-mobile');
             const langLinkZhMobile = document.getElementById('lang-link-zh-mobile');
 
-            const jaHref = currentPage === 'index.html' ? 'ja/' : 'ja/' + currentPage;
-            const deHref = currentPage === 'index.html' ? 'de/' : 'de/' + currentPage;
-            const zhHref = currentPage === 'index.html' ? 'zh/' : 'zh/' + currentPage;
             const enHref = currentPage === 'index.html' ? '/' : currentPage;
+            const jaHref = currentPage === 'index.html' ? '/ja/' : 'ja/' + currentPage;
+            const deHref = currentPage === 'index.html' ? '/de/' : 'de/' + currentPage;
+            const zhHref = currentPage === 'index.html' ? '/zh/' : 'zh/' + currentPage;
 
             if (langLinkEn) langLinkEn.href = enHref;
             if (langLinkJa) langLinkJa.href = jaHref;

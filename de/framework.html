@@ -34,9 +34,9 @@
 </svg>
 </button>
 <div class="hidden absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50" id="lang-menu">
-<a class="block px-4 py-2 text-sm text-gray-900 bg-emerald-50 font-medium" href="framework.html" id="lang-link-en">English</a>
-<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" href="ja/framework.html" id="lang-link-ja">日本語</a>
-<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" href="de/framework.html" id="lang-link-de">Deutsch</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" href="../framework.html" id="lang-link-en">English</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" href="../ja/framework.html" id="lang-link-ja">日本語</a>
+<a class="block px-4 py-2 text-sm text-gray-900 bg-emerald-50 font-medium" href="framework.html" id="lang-link-de">Deutsch</a>
 <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" href="../zh/framework.html" id="lang-link-zh">中文</a>
 </div>
 </div>
@@ -62,9 +62,9 @@
 <a class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600" href="assessment.html">Assessment</a>
 <div class="border-t border-gray-200 mt-2 pt-2">
 <div class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Sprache</div>
-<a class="block px-3 py-2 rounded-md text-gray-900 font-medium bg-emerald-50" href="framework.html" id="lang-link-en-mobile">English</a>
-<a class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600" href="ja/framework.html" id="lang-link-ja-mobile">日本語</a>
-<a class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600" href="de/framework.html" id="lang-link-de-mobile">Deutsch</a>
+<a class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600" href="../framework.html" id="lang-link-en-mobile">English</a>
+<a class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600" href="../ja/framework.html" id="lang-link-ja-mobile">日本語</a>
+<a class="block px-3 py-2 rounded-md text-gray-900 font-medium bg-emerald-50" href="framework.html" id="lang-link-de-mobile">Deutsch</a>
 <a class="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-50 hover:text-emerald-600" href="../zh/framework.html" id="lang-link-zh-mobile">中文</a>
 </div>
 </div>
@@ -86,7 +86,7 @@
 
         if (langButton && langMenu) {
             langButton.addEventListener('click', (e) => {
-                <!-- e.stopPropagation(); -->
+                e.stopPropagation();
                 langMenu.classList.toggle('hidden');
             });
 
@@ -98,7 +98,7 @@
         }
 
         // Auto-update language switcher links based on current page
-        (function() {
+(function() {
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             const langLinkEn = document.getElementById('lang-link-en');
             const langLinkJa = document.getElementById('lang-link-ja');
@@ -109,14 +109,25 @@
             const langLinkDeMobile = document.getElementById('lang-link-de-mobile');
             const langLinkZhMobile = document.getElementById('lang-link-zh-mobile');
 
-            if (langLinkEn) langLinkEn.href = '../' + currentPage;
-            if (langLinkJa) langLinkJa.href = '../ja/' + currentPage;
-            if (langLinkDe) langLinkDe.href = currentPage;
-            if (langLinkZh) langLinkZh.href = '../zh/' + currentPage;
-            if (langLinkEnMobile) langLinkEnMobile.href = '../' + currentPage;
-            if (langLinkJaMobile) langLinkJaMobile.href = '../ja/' + currentPage;
-            if (langLinkDeMobile) langLinkDeMobile.href = currentPage;
-            if (langLinkZhMobile) langLinkZhMobile.href = '../zh/' + currentPage;
+            if (currentPage === 'index.html') {
+                if (langLinkEn) langLinkEn.href = '/';
+                if (langLinkJa) langLinkJa.href = '/ja/';
+                if (langLinkDe) langLinkDe.href = '/de/';
+                if (langLinkZh) langLinkZh.href = '/zh/';
+                if (langLinkEnMobile) langLinkEnMobile.href = '/';
+                if (langLinkJaMobile) langLinkJaMobile.href = '/ja/';
+                if (langLinkDeMobile) langLinkDeMobile.href = '/de/';
+                if (langLinkZhMobile) langLinkZhMobile.href = '/zh/';
+            } else {
+                if (langLinkEn) langLinkEn.href = '../' + currentPage;
+                if (langLinkJa) langLinkJa.href = '../ja/' + currentPage;
+                if (langLinkDe) langLinkDe.href = currentPage;
+                if (langLinkZh) langLinkZh.href = '../zh/' + currentPage;
+                if (langLinkEnMobile) langLinkEnMobile.href = '../' + currentPage;
+                if (langLinkJaMobile) langLinkJaMobile.href = '../ja/' + currentPage;
+                if (langLinkDeMobile) langLinkDeMobile.href = currentPage;
+                if (langLinkZhMobile) langLinkZhMobile.href = '../zh/' + currentPage;
+            }
         })();
     </script>
     <!-- Hero -->
